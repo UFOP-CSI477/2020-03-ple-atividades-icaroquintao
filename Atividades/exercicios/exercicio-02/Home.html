@@ -6,6 +6,12 @@
     <title>Home</title>
 
     <style type="text/css">
+        @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+        html {
+            font-family: 'Roboto', sans-serif, Arial;
+            font-size: 18px;
+        }
+        
         body {
             margin: 0;
         }
@@ -43,6 +49,48 @@
             justify-content: center;
             align-items: center
         }
+        
+        a {
+            color: white;
+            background-color: #0000ff;
+            text-decoration: none;
+            padding: 10px;
+        }
+        
+        a:hover {
+            background-color: red;
+            font-weight: bold;
+        }
+        
+        a:active {
+            background-color: green;
+            color: black
+        }
+        
+        a:link {
+            text-decoration: underline;
+            color: yellow;
+        }
+        
+        a:visited {
+            background-color: gray;
+        }
+        
+        .flex {
+            display: flex;
+            flex-direction: row;
+            flex-flow: row wrap;
+            justify-content: center;
+        }
+        
+        .flex div {
+            background-color: #0000ff;
+            width: 200px;
+            margin: 20px;
+            line-height: 100px;
+            text-align: center;
+            border-radius: 20px;
+        }
     </style>
 </head>
 
@@ -50,6 +98,22 @@
     <header>
         <h1>Olá, pessoas! Sejam Bem-vindas!</h1>
     </header>
+    <div class="flex">
+        <div>
+            <a href="Cadastros.html">Cadastros</a></div>
+        <br>
+        <div>
+            <a href="Lancamentos.html">Lançamentos</a></div>
+        <br>
+        <div>
+            <a href="Perfil.html">Perfil</a></div>
+        <br>
+        <div>
+            <a href="Relatorios.html">Relatórios</a></div>
+        <br>
+        <div>
+            <a href="https://github.com/icaroquintao" target="_blank">GitHub</a></div>
+    </div>
     <h2>Subtitulo 1</h2>
     <h3>Subtitulo 2</h3>
     <h4>Subtitulo 3</h4>
@@ -58,23 +122,7 @@
     <!--Comentário-->
     <p style="color: red;">Texto em Parágrafo</p>
 
-    <div>
-        <div id="codigo">
-            <a href="Cadastros.html">Cadastros</a></div>
-        <br>
-        <div id="codigo">
-            <a href="Lancamentos.html">Lançamentos</a></div>
-        <br>
-        <div id="codigo">
-            <a href="Perfil.html" target="_blank">Perfil</a></div>
-        <br>
-        <div id="codigo">
-            <a href="Relatorios.html">Relatórios</a></div>
-        <br>
-        <div id="codigo">
-            <a href="Sair.html">Sair</a></div>
 
-    </div>
     <div class="container">
         <br>
         <img width="50%" src="../exercicio-01/img/alberto-bigoni-VytTvz6a5lU-unsplash.jpg" alt="Foto Home">
