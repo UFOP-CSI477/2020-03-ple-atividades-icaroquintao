@@ -7,6 +7,12 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 </head>
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+<script src="./js/escala.js"></script>
+
+
 
 <body>
 
@@ -40,12 +46,125 @@
 
 
 
-    <header>
-        <h1>Escala Richter</h1>
-    </header>
 
 
-    <footer class=" navbar-dark bg-primary">
+
+    <div class="container-fluid">
+        <div class="row ">
+
+            <div class="col">
+
+            </div>
+            <div class="col">
+                <header>
+                    <h1>Escala Richter</h1>
+                </header>
+            </div>
+            <div class="col">
+
+            </div>
+        </div>
+        <div class="row ">
+
+            <div class="col">
+
+            </div>
+            <div class="col">
+                <img width="80%" src="./img/250px-Ondas_sísmicas_s_p.svg.png" alt="Calculo da Escala Richter">
+                <!--Fonte: https://pt.wikipedia.org/wiki/Escala_de_Richter -->
+            </div>
+            <div class="col">
+
+            </div>
+        </div>
+
+    </div>
+
+    <form>
+
+        <div class="container-fluid">
+            <div class="row ">
+
+                <div class="col">
+
+                </div>
+                <div class="col">
+                    <div class="form-group">
+                        <label for="amplitude">Amplitude (mm): </label>
+                        <input type="number" name="amplitude" id="amplitude" placeholder="Digite a Amplitude" class="form-control">
+                    </div>
+                </div>
+                <div class="col">
+
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-4">
+
+                </div>
+                <div class="col-4">
+                    <div class="form-group">
+                        <label for="tempo">Intervalo de tempo (&Delta;s): </label>
+                        <input type="number" name="tempo" id="tempo" placeholder="Digite o intervalo de tempo &Delta;t" class="form-control">
+                    </div>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-5">
+
+                </div>
+                <div class="col-4">
+                    <input type="submit" value="Calcular" class="btn btn-success" onclick="calcula();return false;">
+                    <input type="reset" value="Limpar" class="btn btn-danger">
+                </div>
+            </div>
+
+
+
+        </div>
+
+
+
+
+
+    </form>
+
+
+
+
+    <div class="container-fluid">
+        <div class="row ">
+
+            <div class="col">
+                <h2>Resposta: </h2>
+            </div>
+            <div class="col">
+                <h5>Magnitude:</h5>
+                <p id="resposta"></p>
+            </div>
+            <div class="col">
+
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-4">
+
+            </div>
+            <div class="col-8">
+                <h5>Efeitos:</h5>
+                <p id="resposta2"></p>
+            </div>
+        </div>
+
+
+
+    </div>
+
+
+    <footer class=" navbar bg-primary">
         <div>
             <p>Sistemas Web I - Atividade Prática - Icaro Quintão EC-14.1.8083</p>
         </div>

@@ -7,71 +7,11 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 </head>
-<script>
-    function calcula() {
-        var p, a, resp, retorno, aux, pesoideal;
+<script src="./js/imc.js"></script>
 
-
-        ps = document.getElementById("peso").value;
-        at = document.getElementById("altura").value;
-
-
-        aux = ps / (at * at);
-        console.log(aux);
-        resp = parseFloat(aux.toFixed(1));
-        console.log(resp);
-        if (resp < 18.5) {
-            retorno = 'Subnutrição';
-            pesoideal = 18.5 * (at * at);
-            pesoideal = parseFloat(pesoideal.toFixed(2));
-            document.getElementById("resposta2").innerHTML = retorno;
-            document.getElementById("resposta").innerHTML = resp;
-            document.getElementById("pesoid").innerHTML = pesoideal + ' KG';
-
-        }
-        if (resp >= 18.5 && resp <= 24.9) {
-            retorno = 'Peso Saudável';
-            pesoideal = 'Parabéns! Você está no peso ideal';
-            document.getElementById("resposta2").innerHTML = retorno;
-            document.getElementById("resposta").innerHTML = resp;
-            document.getElementById("pesoid").innerHTML = pesoideal;
-        }
-        if (resp >= 25 && resp <= 29.9) {
-            retorno = 'Sobrepeso';
-            pesoideal = 24.9 * (at * at);
-            pesoideal = parseFloat(pesoideal.toFixed(2));
-            document.getElementById("resposta2").innerHTML = retorno;
-            document.getElementById("resposta").innerHTML = resp;
-            document.getElementById("pesoid").innerHTML = pesoideal + ' KG';
-        }
-        if (resp >= 30 && resp <= 34.9) {
-            retorno = 'Obesidade grau 1';
-            pesoideal = 24.9 * (at * at);
-            pesoideal = parseFloat(pesoideal.toFixed(2));
-            document.getElementById("resposta2").innerHTML = retorno;
-            document.getElementById("resposta").innerHTML = resp;
-            document.getElementById("pesoid").innerHTML = pesoideal + ' KG';
-        }
-        if (resp >= 35 && resp <= 39.9) {
-            retorno = 'Obesidade grau 1';
-            pesoideal = 24.9 * (at * at);
-            pesoideal = parseFloat(pesoideal.toFixed(2));
-            document.getElementById("resposta2").innerHTML = retorno;
-            document.getElementById("resposta").innerHTML = resp;
-            document.getElementById("pesoid").innerHTML = pesoideal + ' KG';
-        }
-        if (resp > 40) {
-            retorno = 'Obesidade grau 1';
-            pesoideal = 24.9 * (at * at);
-            pesoideal = parseFloat(pesoideal.toFixed(2));
-            document.getElementById("resposta2").innerHTML = retorno;
-            document.getElementById("resposta").innerHTML = resp;
-            document.getElementById("pesoid").innerHTML = pesoideal + ' KG';
-        }
-
-
-    }
-</script>
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
 
 <body>
 
@@ -102,34 +42,93 @@
         </div>
     </nav>
 
+    <div class="container-fluid">
+        <div class="row ">
 
+            <div class="col">
 
+            </div>
+            <div class="col">
+                <header>
+                    <h1>Cálculo do IMC</h1>
+                </header>
+            </div>
+            <div class="col">
 
-    <header>
-        <h1>Cálculo do IMC</h1>
-    </header>
+            </div>
+        </div>
+        <div class="row ">
 
-    <form>
-        <div class="form-group">
-            <label for="peso">Peso (KG): </label>
-            <input type="number" name="peso" id="peso" placeholder="Digite seu peso Ex: 90,3" class="form-control">
+            <div class="col-3">
+
+            </div>
+            <div class="col">
+                <img width="80%" src="./img/imc.jpg" alt="IMC">
+                <!--Fonte:https://opas.org.br/como-calcular-imc-formula-classificacao-tabela-e-imc-infantil/ -->
+            </div>
+            <div class="col-2">
+
+            </div>
         </div>
 
-        <div class="form-group">
-            <label for="altura">Altura (m): </label>
-            <input type="number" name="altura" id="altura" placeholder="Digite sua altura Ex: 1,70" class="form-control">
-        </div>
-        <input type="submit" value="Calcular" class="btn btn-success" onclick="calcula();return false;">
-        <input type="reset" value="Limpar" class="btn btn-danger">
-    </form>
-    <h2>IMC: </h2>
-    <p id="resposta"></p>
-    <h2>Sua classificação: </h2>
-    <p id="resposta2"></p>
-    <h2>Seu peso ideal: </h2>
-    <p id="pesoid"></p>
+        <div class="row ">
 
-    <footer class=" navbar-dark bg-primary">
+            <div class="col">
+
+            </div>
+            <div class="col">
+                <form>
+                    <div class="form-group">
+                        <label for="peso">Peso (KG): </label>
+                        <input type="number" name="peso" id="peso" placeholder="Digite seu peso Ex: 90,3" class="form-control">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="altura">Altura (m): </label>
+                        <input type="number" name="altura" id="altura" placeholder="Digite sua altura Ex: 1,70" class="form-control">
+                    </div>
+                    <input type="submit" value="Calcular" class="btn btn-success" onclick="calcula();return false;">
+                    <input type="reset" value="Limpar" class="btn btn-danger">
+                </form>
+            </div>
+            <div class="col">
+
+            </div>
+        </div>
+
+        <div class="row ">
+
+            <div class="col">
+
+            </div>
+            <div class="col">
+                <h2>IMC: </h2>
+                <p id="resposta"></p>
+                <h2>Sua classificação: </h2>
+                <p id="resposta2"></p>
+                <h2>Sua faixa de peso ideal: </h2>
+                <p id="pesoid"></p>
+                <p>até</p>
+                <p id="pesoid2"></p>
+            </div>
+            <div class="col">
+
+            </div>
+        </div>
+
+
+
+
+
+    </div>
+
+
+
+
+
+
+
+    <footer class=" navbar bg-primary">
         <div>
             <p>Sistemas Web I - Atividade Prática - Icaro Quintão EC-14.1.8083</p>
         </div>
