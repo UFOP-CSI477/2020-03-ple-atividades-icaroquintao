@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="br" dir="ltr">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Cadastro de pessoas</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <script src="04-validacao.js"></script>
+</head>
+
+<body>
+
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+        <a class="navbar-brand" href="#">Programação<b>WEB</b></a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+
+    </nav>
+
+
+    <form method="post" name="dados">
+
+        <div class="form-group" id="grupo1">
+            <label for="nome" id="label1">Nome: </label>
+            <input type="text" name="nome" id="nome" placeholder="Digite seu nome completo" class="form-control">
+
+            <!-- O display: none oculta o alerta quando o formulário e carregado -->
+            <div id="alerta1" class="alert alert-danger" style="display: none">
+                <span>Preencha o campo corretamente!</span>
+            </div>
+        </div>
+
+        <div class="form-group" id="grupo2">
+            <label for="email">Email: </label>
+            <input type="email" name="email" id="email" placeholder="Digite seu email" class="form-control">
+            <!-- O display: none oculta o alerta quando o formulário e carregado -->
+            <div id="alerta2" class="alert alert-danger" style="display: none">
+                <span>Preencha o campo corretamente!</span>
+            </div>
+        </div>
+
+        <div class="form-group" id="grupo3">
+            <label for="endereco">Endereço: </label>
+            <input type="text" name="endereco" id="endereco" placeholder="Digite seu endereço" class="form-control">
+        </div>
+
+        <div class="form-group" id="grupo4">
+            <label for="cpf" id="label3">CPF: </label>
+            <input type="text" name="cpf" id="cpf" placeholder="111.111.111-11" class="form-control">
+            <!-- O display: none oculta o alerta quando o formulário e carregado -->
+            <div id="alerta3" class="alert alert-danger" style="display: none">
+                <span>Digite um CPF valido!</span>
+            </div>
+        </div>
+
+
+
+        <div class="form-group" id="grupo5">
+            <label for="idade" id="label4">Data de nascimento: </label>
+            <input type="date" name="idade" id="idade">
+
+            <!-- O display: none oculta o alerta quando o formulário e carregado -->
+            <div id="alerta4" class="alert alert-danger" style="display: none">
+                <span>Você precisa ser maior de 18 anos para se cadastrar!</span>
+            </div>
+        </div>
+
+        <div id="grupo6">
+            <label>Gênero: </label>
+            <div class="form-group form-check">
+                <input type="radio" name="genero" id="feminino" value="F" class="form-check-input">
+                <label for="feminino" class="form-check-label">Feminino</label>
+            </div>
+            <div class="form-group form-check">
+                <input type="radio" name="genero" id="masculino" value="M" class="form-check-input">
+                <label for="masculino" class="form-check-label">Masculino</label>
+            </div>
+            <div class="form-group form-check">
+                <input type="radio" name="genero" id="naobinario" value="NB" class="form-check-input">
+                <label for="naobinario" class="form-check-label">Não Binário</label>
+            </div>
+            <div class="form-group form-check">
+                <input type="radio" name="genero" id="semresposta" value="SR" class="form-check-input">
+                <label for="semresposta" class="form-check-label">Prefiro não informar</label>
+            </div>
+        </div>
+
+        <div class="form-group" id="grupo7">
+            <label>Áreas de interesse: </label>
+            <div class="form-group form-check">
+                <input type="checkbox" name="area[0]" id="web" class="form-check-input">
+                <label for="web" class="form-check-label">Sistemas Web</label>
+            </div>
+            <div class="form-group form-check">
+                <input type="checkbox" name="area[1]" id="db" class="form-check-input">
+                <label for="db" class="form-check-label">Banco de dados</label>
+            </div>
+            <div class="form-group form-check">
+                <input type="checkbox" name="area[2]" id="redes" class="form-check-input">
+                <label for="redes" class="form-check-label">Redes</label>
+            </div>
+
+        </div>
+
+        <input type="button" value="Cadastrar" class="btn btn-primary" onclick="cadastrar()">
+        <input type="reset" value="Limpar" class="btn btn-danger">
+
+    </form>
+
+
+
+
+</body>
+
+</html>
