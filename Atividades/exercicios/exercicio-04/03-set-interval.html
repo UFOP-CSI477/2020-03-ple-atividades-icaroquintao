@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Set Interval</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+
+    <script>
+        let contador = Date();
+        let id;
+        let executando = false;
+
+        function processo() {
+            document.getElementById("contador").innerHTML = `Data de hoje = ${contador}`;
+            contador = Date();
+        }
+
+        function iniciar() {
+            if (!executando) {
+                id = setInterval(processo);
+                executando = true;
+            }
+        }
+
+        function parar() {
+            clearInterval(id);
+            executando = false;
+        }
+
+        function reiniciar() {
+            parar();
+            contador = 1;
+            document.getElementById("contador").innerHTML = "";
+        }
+    </script>
+</head>
+
+<body>
+    <nav class="navbar navbar-info bg-dark">
+        <a class="navbar-brand" href="#">
+            Contador de Data
+        </a>
+    </nav>
+
+    <div class="container-fluid">
+        <div class="row">
+
+            <div class="col">
+
+            </div>
+            <div class="col">
+                <h1>
+                    <div id="contador"></div>
+                </h1>
+
+            </div>
+            <div class="col">
+
+            </div>
+        </div>
+
+        <div class="row">
+
+            <div class="col">
+
+            </div>
+            <div class="col">
+                <input type="button" value="Iniciar" onclick="iniciar()" class="btn btn-success">
+                <input type="button" value="Parar" onclick="parar()" class="btn btn-warning">
+                <input type="button" value="Reiniciar" onclick="reiniciar()" class="btn btn-danger">
+            </div>
+            <div class="col">
+
+            </div>
+        </div>
+
+
+
+
+    </div>
+
+
+
+
+
+
+</body>
+
+</html>

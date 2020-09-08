@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Introdução ao JavaScript - Forms</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+
+    <script>
+        'use strict'
+
+        function Pessoa(nome, sobrenome, idade, endereco) {
+            this.nome = nome;
+            this.sobrenome = sobrenome;
+            this.idade = idade;
+            this.endereco = endereco;
+
+
+        }
+
+
+        function carregarDados() {
+
+            const nome = window.prompt("Insira o seu nome:");
+            const sobrenome = window.prompt("Insira o seu sobrenome:");
+            const idade = window.prompt("Insira a sua idade:");
+            const endereco = window.prompt("Insira o seu endereço:");
+
+            const pessoa = new Pessoa(nome, sobrenome, idade, endereco)
+
+            document.getElementById("data").innerHTML = Date();
+            document.getElementById("nome").innerHTML = pessoa.nome;
+            document.getElementById("sobrenome").innerHTML = pessoa.sobrenome;
+            document.getElementById("idade").innerHTML = pessoa.idade;
+            document.getElementById("endereco").innerHTML = pessoa.endereco;
+
+            for (let i = 0; i < 10; i++) {
+                console.log(i);
+            }
+        }
+
+
+        function carregarDadosdoForm() {
+            const nome = document.frmDados.nome.value;
+            const sobrenome = document.frmDados.sobrenome.value;
+            const idade = document.frmDados.idade.value;
+            const endereco = document.frmDados.endereco.value;
+
+            const pessoa = new Pessoa(nome, sobrenome, idade, endereco);
+            console.log(pessoa);
+            window.alert(`Dados Carregados com Sucesso: ${nome} ${sobrenome}`);
+
+            document.getElementById("data").innerHTML = Date();
+            document.getElementById("nome").innerHTML = pessoa.nome;
+            document.getElementById("sobrenome").innerHTML = pessoa.sobrenome;
+            document.getElementById("idade").innerHTML = pessoa.idade;
+            document.getElementById("endereco").innerHTML = pessoa.endereco;
+
+            let obj = {
+                name: nome,
+                lastname: sobrenome,
+                address: {
+                    street: '5th avenue'
+                }
+
+            }
+            console.log(obj);
+        }
+    </script>
+
+</head>
+
+<body>
+
+
+
+
+
+
+    <div class="container-fluid">
+        <p></p>
+
+        <form action="post" name="frmDados">
+
+
+
+
+
+
+            <div class="row">
+
+
+
+                <div class="col">
+                    <input type="text" name="nome" placeholder="Nome">
+                </div>
+                <div class="col">
+                    <input type="text" name="sobrenome" placeholder="Sobrenome">
+                </div>
+                <div class="col">
+                    <input type="text" name="idade" placeholder="Idade">
+                </div>
+                <div class="col">
+                    <input type="text" name="endereco" placeholder="Endereço">
+                </div>
+            </div>
+        </form>
+
+        <div class="row">
+            <div class="col">
+                <p></p>
+            </div>
+        </div>
+
+        <div class="row">
+
+            <div class="col">
+
+            </div>
+            <div class="col">
+
+                <input type="button" value="Carregar Do Formulario" onclick="carregarDadosdoForm()" class="btn btn-success">
+            </div>
+            <div class="col">
+
+            </div>
+        </div>
+
+
+        <div id="dados">
+            <h3>Data de Hoje:</h3>
+            <div id="data"></div>
+            <h3>Seu nome:</h3>
+            <div id="nome"></div>
+            <h3>Seu sobrenome:</h3>
+            <div id="sobrenome"></div>
+            <h3>Sua idade:</h3>
+            <div id="idade"></div>
+            <h3>Seu endereço:</h3>
+            <div id="endereco"></div>
+
+
+
+
+
+        </div>
+
+
+
+    </div>
+
+
+
+
+
+
+
+</body>
+
+</html>
