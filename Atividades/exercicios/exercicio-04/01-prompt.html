@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Introdução ao JavaScript</title>
+
+    <script>
+        'use strict'
+
+        function Pessoa(nome, sobrenome, idade, endereco) {
+            this.nome = nome;
+            this.sobrenome = sobrenome;
+            this.idade = idade;
+            this.endereco = endereco;
+
+
+        }
+
+
+        function carregarDados() {
+
+            const nome = window.prompt("Insira o seu nome:");
+            const sobrenome = window.prompt("Insira o seu sobrenome:");
+            const idade = window.prompt("Insira a sua idade:");
+            const endereco = window.prompt("Insira o seu endereço:");
+
+            const pessoa = new Pessoa(nome, sobrenome, idade, endereco)
+
+            document.getElementById("data").innerHTML = Date();
+            document.getElementById("nome").innerHTML = pessoa.nome;
+            document.getElementById("sobrenome").innerHTML = pessoa.sobrenome;
+            document.getElementById("idade").innerHTML = pessoa.idade;
+            document.getElementById("endereco").innerHTML = pessoa.endereco;
+
+            for (let i = 0; i < 10; i++) {
+                console.log(i);
+            }
+        }
+    </script>
+
+</head>
+
+<body>
+
+    <script>
+        document.write('Olá, mundo!');
+    </script>
+
+    <div id="dados">
+        <h3>Data de Hoje:</h3>
+        <div id="data"></div>
+        <h3>Seu nome:</h3>
+        <div id="nome"></div>
+        <h3>Seu sobrenome:</h3>
+        <div id="sobrenome"></div>
+        <h3>Sua idade:</h3>
+        <div id="idade"></div>
+        <h3>Seu endereço:</h3>
+        <div id="endereco"></div>
+
+
+
+
+
+    </div>
+    <input type="button" value="Carregar" onclick="carregarDados()">
+
+</body>
+
+</html>
