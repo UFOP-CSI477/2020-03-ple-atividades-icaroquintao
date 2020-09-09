@@ -88,28 +88,30 @@
                         <input type="number" name="altura" id="altura" placeholder="Digite sua altura Ex: 1,70" class="form-control">
                     </div>
                     <input type="submit" value="Calcular" class="btn btn-success" onclick="calcula();return false;">
-                    <input type="reset" value="Limpar" class="btn btn-danger">
+                    <input type="reset" value="Limpar" class="btn btn-danger" onclick="limpa()">
                 </form>
             </div>
             <div class="col">
 
             </div>
         </div>
-
+        <br>
+        <br>
         <div class="row ">
 
             <div class="col">
 
             </div>
-            <div class="col">
+            <div class="col" id="mostrar" style="display: none">
                 <h2>IMC: </h2>
                 <p id="resposta"></p>
                 <h2>Sua classificação: </h2>
                 <p id="resposta2"></p>
                 <h2>Sua faixa de peso ideal: </h2>
-                <p id="pesoid"></p>
-                <p>até</p>
-                <p id="pesoid2"></p>
+                De
+                <a id="pesoid"></a>
+                até
+                <a id="pesoid2"></a>
             </div>
             <div class="col">
 
@@ -125,6 +127,10 @@
 
 
 
+
+    <br>
+    <br>
+    <br>
 
 
 

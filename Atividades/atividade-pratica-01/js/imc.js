@@ -20,6 +20,7 @@ function calcula() {
         document.getElementById("resposta").innerHTML = resp;
         document.getElementById("pesoid").innerHTML = pesoideal + ' KG';
         document.getElementById("pesoid2").innerHTML = pesoideal2 + ' KG';
+        document.getElementById(mostrar).style.display = "block";
 
     }
     if (resp >= 18.5 && resp <= 24.9) {
@@ -28,6 +29,7 @@ function calcula() {
         document.getElementById("resposta2").innerHTML = retorno;
         document.getElementById("resposta").innerHTML = resp;
         document.getElementById("pesoid").innerHTML = pesoideal;
+        document.getElementById(mostrar).style.display = "block";
     }
     if (resp >= 25 && resp <= 29.9) {
         retorno = 'Sobrepeso';
@@ -39,6 +41,7 @@ function calcula() {
         document.getElementById("resposta").innerHTML = resp;
         document.getElementById("pesoid").innerHTML = pesoideal + ' KG';
         document.getElementById("pesoid2").innerHTML = pesoideal2 + ' KG';
+        document.getElementById("mostrar").style.display = "block";
     }
     if (resp >= 30 && resp <= 34.9) {
         retorno = 'Obesidade grau 1';
@@ -50,6 +53,7 @@ function calcula() {
         document.getElementById("resposta").innerHTML = resp;
         document.getElementById("pesoid").innerHTML = pesoideal + ' KG';
         document.getElementById("pesoid2").innerHTML = pesoideal2 + ' KG';
+        document.getElementById("mostrar").style.display = "block";
     }
     if (resp >= 35 && resp <= 39.9) {
         retorno = 'Obesidade grau 2';
@@ -61,6 +65,7 @@ function calcula() {
         document.getElementById("resposta").innerHTML = resp;
         document.getElementById("pesoid").innerHTML = pesoideal + ' KG';
         document.getElementById("pesoid2").innerHTML = pesoideal2 + ' KG';
+        document.getElementById("mostrar").style.display = "block";
     }
     if (resp > 40) {
         retorno = 'Obesidade grau 3';
@@ -72,7 +77,12 @@ function calcula() {
         document.getElementById("resposta").innerHTML = resp;
         document.getElementById("pesoid").innerHTML = pesoideal + ' KG';
         document.getElementById("pesoid2").innerHTML = pesoideal2 + ' KG';
+        document.getElementById("mostrar").style.display = "block";
     }
 
 
+}
+
+function limpa() {
+    document.getElementById("mostrar").style.display = "none";
 }

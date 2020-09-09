@@ -6,6 +6,7 @@
     <title>Competição de carrinhos de rolimã</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <script src="./js/corrida.js"></script>
 </head>
 <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
@@ -47,6 +48,88 @@
         <h1>Competição de carrinhos de rolimã</h1>
     </header>
 
+
+    <div class="table-responsive">
+        <table class="table table-bordered table-hover table-striped">
+
+            <caption>Tabela 01</caption>
+
+            <thead>
+
+                <tr class="thead-dark">
+                    <th>Largada</th>
+                    <th>Competidor(a)</th>
+                    <th>Tempo(s)</th>
+
+
+                </tr>
+            </thead>
+            <form name="dados">
+                <tbody>
+
+                    <tr>
+                        <td>1</td>
+                        <td><input type="text" name="nome" id="nome1" placeholder="Digite seu nome" class="form-control" value="Marie"></td>
+                        <td><input type="number" name="tempo" id="tempo1" placeholder="Digite o tempo em segundos" class="form-control" value="87"></td>
+
+
+
+                    </tr>
+
+                    <tr>
+                        <td>2</td>
+                        <td><input type="text" name="nome" id="nome2" placeholder="Digite seu nome" class="form-control" value="Malala"></td>
+                        <td><input type="number" name="tempo" id="tempo2" placeholder="Digite o tempo em segundos" class="form-control" value="83"></td>
+
+                    </tr>
+
+                    <tr>
+                        <td>3</td>
+                        <td><input type="text" name="nome" id="nome3" placeholder="Digite seu nome" class="form-control" value="Nadia"></td>
+                        <td><input type="number" name="tempo" id="tempo3" placeholder="Digite o tempo em segundos" class="form-control" value="86"></td>
+
+                    </tr>
+
+                    <tr>
+                        <td>4</td>
+                        <td><input type="text" name="nome" id="nome4" placeholder="Digite seu nome" class="form-control" value="Suzana"></td>
+                        <td><input type="number" name="tempo" id="tempo4" placeholder="Digite o tempo em segundos" class="form-control" value="83"></td>
+
+                    </tr>
+
+                    <tr>
+                        <td>5</td>
+                        <td><input type="text" name="nome" id="nome5" placeholder="Digite seu nome" class="form-control" value="Margaret"></td>
+                        <td><input type="number" name="tempo" id="tempo5" placeholder="Digite o tempo em segundos" class="form-control" value="85"></td>
+
+                    </tr>
+                    <tr>
+                        <td>6</td>
+                        <td><input type="text" name="nome" id="nome6" placeholder="Digite seu nome" class="form-control" value="Grace"></td>
+                        <td><input type="number" name="tempo" id="tempo6" placeholder="Digite o tempo em segundos" class="form-control" value="88"></td>
+
+                    </tr>
+
+                </tbody>
+
+                <tfoot>
+
+                    <tr>
+                        <td colspan="2">Quantidade máxima de competidores: </td>
+                        <td colspan="1">6</td>
+
+                    </tr>
+
+                    <tr>
+                        <td colspan="2"><input type="submit" value="Calcular" class="btn btn-success" onclick="calcula();return false;"></td>
+                        <td colspan="1"><input type="reset" value="Limpar" class="btn btn-danger"></td>
+
+                    </tr>
+
+                </tfoot>
+            </form>
+        </table>
+    </div>
 
     <footer class=" navbar bg-primary">
         <div>
