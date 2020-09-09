@@ -12,9 +12,20 @@ function calcula() {
     aux2 = aux2.filter(function(v) { return v !== '' });
     ctempo = ctempo.filter(function(v) { return v !== '' });
     corredores = corredores.filter(function(v) { return v !== '' });
-    // Mostra tabela resultado
-    document.getElementById("resultado").style.display = "block";
+    // Mostra tabela resultado e exibe erro caso não tenha pelo menos um competidor
+    console.log(aux);
+    if (ctempo.length != 0 && corredores.length != 0) {
+        document.getElementById("resultado").style.display = "block";
+        document.getElementById("alerta").classList.remove("table-danger");
+        document.getElementById("alerta1").style.display = "none";
+        document.getElementById("alerta2").style.display = "none";
+    }
 
+    if (ctempo.length == 0 || corredores.length == 0) {
+        document.getElementById("alerta").classList.add("table-danger");
+        document.getElementById("alerta1").style.display = "block";
+        document.getElementById("alerta2").style.display = "block";
+    }
 
     //numero de vencedores para exibir na tela
     var min = Math.min.apply(null, ctempo);;

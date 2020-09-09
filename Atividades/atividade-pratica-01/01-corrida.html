@@ -7,10 +7,11 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <script src="./js/corrida.js"></script>
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+
 </head>
-<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
 
 <body>
 
@@ -68,10 +69,18 @@
             <form name="dados">
                 <tbody>
 
-                    <tr>
+                    <tr id="alerta">
                         <td>1</td>
-                        <td><input type="text" name="nome" id="nome1" placeholder="Digite seu nome" class="form-control"></td>
-                        <td><input type="number" name="tempo" id="tempo1" placeholder="Digite o tempo em segundos" class="form-control"></td>
+                        <td><input type="text" name="nome" id="nome1" placeholder="Digite o nome do competidor 1" class="form-control">
+                            <div id="alerta1" class="alert alert-danger" style="display: none">
+                                <span>Insira pelo menos um competidor!</span>
+                            </div>
+                        </td>
+                        <td><input type="number" name="tempo" id="tempo1" placeholder="Digite o tempo em segundos" class="form-control">
+                            <div id="alerta2" class="alert alert-danger" style="display: none">
+                                <span>Insira pelo menos um tempo!</span>
+                            </div>
+                        </td>
 
 
 
@@ -79,34 +88,34 @@
 
                     <tr>
                         <td>2</td>
-                        <td><input type="text" name="nome" id="nome2" placeholder="Digite seu nome" class="form-control"></td>
+                        <td><input type="text" name="nome" id="nome2" placeholder="Digite o nome do competidor 2" class="form-control"></td>
                         <td><input type="number" name="tempo" id="tempo2" placeholder="Digite o tempo em segundos" class="form-control"></td>
 
                     </tr>
 
                     <tr>
                         <td>3</td>
-                        <td><input type="text" name="nome" id="nome3" placeholder="Digite seu nome" class="form-control"></td>
+                        <td><input type="text" name="nome" id="nome3" placeholder="Digite o nome do competidor 3" class="form-control"></td>
                         <td><input type="number" name="tempo" id="tempo3" placeholder="Digite o tempo em segundos" class="form-control"></td>
 
                     </tr>
 
                     <tr>
                         <td>4</td>
-                        <td><input type="text" name="nome" id="nome4" placeholder="Digite seu nome" class="form-control"></td>
+                        <td><input type="text" name="nome" id="nome4" placeholder="Digite o nome do competidor 4" class="form-control"></td>
                         <td><input type="number" name="tempo" id="tempo4" placeholder="Digite o tempo em segundos" class="form-control"></td>
 
                     </tr>
 
                     <tr>
                         <td>5</td>
-                        <td><input type="text" name="nome" id="nome5" placeholder="Digite seu nome" class="form-control"></td>
+                        <td><input type="text" name="nome" id="nome5" placeholder="Digite o nome do competidor 5" class="form-control"></td>
                         <td><input type="number" name="tempo" id="tempo5" placeholder="Digite o tempo em segundos" class="form-control"></td>
 
                     </tr>
                     <tr>
                         <td>6</td>
-                        <td><input type="text" name="nome" id="nome6" placeholder="Digite seu nome" class="form-control"></td>
+                        <td><input type="text" name="nome" id="nome6" placeholder="Digite o nome do competidor 6" class="form-control"></td>
                         <td><input type="number" name="tempo" id="tempo6" placeholder="Digite o tempo em segundos" class="form-control"></td>
 
                     </tr>
