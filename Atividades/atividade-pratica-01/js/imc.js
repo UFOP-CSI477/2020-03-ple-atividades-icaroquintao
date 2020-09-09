@@ -1,13 +1,14 @@
 function calcula() {
     var ps, at, resp, retorno, aux, pesoideal, pesoideal2;
 
-
+    //Carrega os valores informados pelo usuario
     ps = document.getElementById("peso").value;
     at = document.getElementById("altura").value;
 
-
+    //calcula o IMC
     aux = ps / (at * at);
     console.log(aux);
+    //Deixa o resultado com uma casa depois da virgula, para apresentar na tela e fazer as comparações de classificação
     resp = parseFloat(aux.toFixed(1));
     console.log(resp);
     if (resp < 18.5) {
@@ -20,7 +21,7 @@ function calcula() {
         document.getElementById("resposta").innerHTML = resp;
         document.getElementById("pesoid").innerHTML = pesoideal + ' KG';
         document.getElementById("pesoid2").innerHTML = pesoideal2 + ' KG';
-        document.getElementById(mostrar).style.display = "block";
+        document.getElementById("mostrar").style.display = "block";
 
     }
     if (resp >= 18.5 && resp <= 24.9) {

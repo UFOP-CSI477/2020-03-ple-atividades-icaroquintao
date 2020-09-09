@@ -44,15 +44,16 @@
 
 
 
-    <header>
+    <header class="">
         <h1>Competição de carrinhos de rolimã</h1>
+        <h5>Digite os nomes dos competidores e os respectivos tempos, caso sejam menos de 6 competidores apenas deixe os campos em branco</h5>
     </header>
 
 
     <div class="table-responsive">
         <table class="table table-bordered table-hover table-striped">
 
-            <caption>Tabela 01</caption>
+            <caption>Tabela 01 - Dados</caption>
 
             <thead>
 
@@ -69,8 +70,8 @@
 
                     <tr>
                         <td>1</td>
-                        <td><input type="text" name="nome" id="nome1" placeholder="Digite seu nome" class="form-control" value="Marie"></td>
-                        <td><input type="number" name="tempo" id="tempo1" placeholder="Digite o tempo em segundos" class="form-control" value="87"></td>
+                        <td><input type="text" name="nome" id="nome1" placeholder="Digite seu nome" class="form-control"></td>
+                        <td><input type="number" name="tempo" id="tempo1" placeholder="Digite o tempo em segundos" class="form-control"></td>
 
 
 
@@ -78,35 +79,35 @@
 
                     <tr>
                         <td>2</td>
-                        <td><input type="text" name="nome" id="nome2" placeholder="Digite seu nome" class="form-control" value="Malala"></td>
-                        <td><input type="number" name="tempo" id="tempo2" placeholder="Digite o tempo em segundos" class="form-control" value="83"></td>
+                        <td><input type="text" name="nome" id="nome2" placeholder="Digite seu nome" class="form-control"></td>
+                        <td><input type="number" name="tempo" id="tempo2" placeholder="Digite o tempo em segundos" class="form-control"></td>
 
                     </tr>
 
                     <tr>
                         <td>3</td>
-                        <td><input type="text" name="nome" id="nome3" placeholder="Digite seu nome" class="form-control" value="Nadia"></td>
-                        <td><input type="number" name="tempo" id="tempo3" placeholder="Digite o tempo em segundos" class="form-control" value="86"></td>
+                        <td><input type="text" name="nome" id="nome3" placeholder="Digite seu nome" class="form-control"></td>
+                        <td><input type="number" name="tempo" id="tempo3" placeholder="Digite o tempo em segundos" class="form-control"></td>
 
                     </tr>
 
                     <tr>
                         <td>4</td>
-                        <td><input type="text" name="nome" id="nome4" placeholder="Digite seu nome" class="form-control" value="Suzana"></td>
-                        <td><input type="number" name="tempo" id="tempo4" placeholder="Digite o tempo em segundos" class="form-control" value="83"></td>
+                        <td><input type="text" name="nome" id="nome4" placeholder="Digite seu nome" class="form-control"></td>
+                        <td><input type="number" name="tempo" id="tempo4" placeholder="Digite o tempo em segundos" class="form-control"></td>
 
                     </tr>
 
                     <tr>
                         <td>5</td>
-                        <td><input type="text" name="nome" id="nome5" placeholder="Digite seu nome" class="form-control" value="Margaret"></td>
-                        <td><input type="number" name="tempo" id="tempo5" placeholder="Digite o tempo em segundos" class="form-control" value="85"></td>
+                        <td><input type="text" name="nome" id="nome5" placeholder="Digite seu nome" class="form-control"></td>
+                        <td><input type="number" name="tempo" id="tempo5" placeholder="Digite o tempo em segundos" class="form-control"></td>
 
                     </tr>
                     <tr>
                         <td>6</td>
-                        <td><input type="text" name="nome" id="nome6" placeholder="Digite seu nome" class="form-control" value="Grace"></td>
-                        <td><input type="number" name="tempo" id="tempo6" placeholder="Digite o tempo em segundos" class="form-control" value="88"></td>
+                        <td><input type="text" name="nome" id="nome6" placeholder="Digite seu nome" class="form-control"></td>
+                        <td><input type="number" name="tempo" id="tempo6" placeholder="Digite o tempo em segundos" class="form-control"></td>
 
                     </tr>
 
@@ -122,9 +123,149 @@
 
                     <tr>
                         <td colspan="2"><input type="submit" value="Calcular" class="btn btn-success" onclick="calcula();return false;"></td>
-                        <td colspan="1"><input type="reset" value="Limpar" class="btn btn-danger"></td>
+                        <td colspan="1"><input type="reset" value="Limpar" class="btn btn-danger" onclick="limpa();"></td>
 
                     </tr>
+
+                </tfoot>
+            </form>
+        </table>
+    </div>
+
+    <div class="table-responsive" style="display: none" id="resultado">
+        <table class="table table-bordered table-hover table-striped">
+
+            <caption>Tabela 02 - Respostas</caption>
+
+            <thead>
+
+                <tr class="thead-dark">
+                    <th>Posição</th>
+                    <th>Largada</th>
+                    <th>Competidor(a)</th>
+                    <th>Tempo(s)</th>
+                    <th>Resultado</th>
+
+
+                </tr>
+            </thead>
+            <form name="dados2">
+                <tbody>
+
+                    <tr>
+                        <td>
+                            <p id="presp0"></p>
+                        </td>
+                        <td>
+                            <p id="lresp0"></p>
+                        </td>
+                        <td>
+                            <p id="resp0"></p>
+                        </td>
+                        <td>
+                            <p id="tresp0"></p>
+                        </td>
+                        <td>
+                            <div id="mostra0" style="display: none">Vencedor!</div>
+                        </td>
+
+
+
+
+                    </tr>
+
+                    <tr>
+                        <td>
+                            <p id="presp1"></p>
+                        </td>
+                        <td>
+                            <p id="lresp1"></p>
+                        </td>
+                        <td>
+                            <p id="resp1"></p>
+                        </td>
+                        <td>
+                            <p id="tresp1"></p>
+                        </td>
+                        <td>
+                            <div id="mostra1" style="display: none">Vencedor!</div>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td>
+                            <p id="presp2"></p>
+                        </td>
+                        <td>
+                            <p id="lresp2"></p>
+                        </td>
+                        <td>
+                            <p id="resp2"></p>
+                        </td>
+                        <td>
+                            <p id="tresp2"></p>
+                        </td>
+                        <td>
+                            <div id="mostra2" style="display: none">Vencedor!</div>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td>
+                            <p id="presp3"></p>
+                        </td>
+                        <td>
+                            <p id="lresp3"></p>
+                        </td>
+                        <td>
+                            <p id="resp3"></p>
+                        </td>
+                        <td>
+                            <p id="tresp3"></p>
+                        </td>
+                        <td>
+                            <div id="mostra3" style="display: none">Vencedor!</div>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td>
+                            <p id="presp4"></p>
+                        </td>
+                        <td>
+                            <p id="lresp4"></p>
+                        </td>
+                        <td>
+                            <p id="resp4"></p>
+                        </td>
+                        <td>
+                            <p id="tresp4"></p>
+                        </td>
+                        <td>
+                            <div id="mostra4" style="display: none">Vencedor!</div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <p id="presp5"></p>
+                        </td>
+                        <td>
+                            <p id="lresp5"></p>
+                        </td>
+                        <td>
+                            <p id="resp5"></p>
+                        </td>
+                        <td>
+                            <p id="tresp5"></p>
+                        </td>
+                        <td>
+                            <div id="mostra5" style="display: none">Vencedor!</div>
+                        </td>
+                    </tr>
+
+                </tbody>
+
+
 
                 </tfoot>
             </form>
