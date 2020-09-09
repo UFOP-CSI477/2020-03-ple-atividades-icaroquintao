@@ -47,6 +47,7 @@
 
     <header>
         <h1>Calculadora</h1>
+        <h5>Efetue um cálculo de cada vez</h5>
     </header>
     <br>
     <br>
@@ -57,15 +58,7 @@
 
             </div>
             <div class="col">
-                <form name="dados">
 
-
-                    <div id="resultado" class="form-group">
-                        <input type="text" name="resultado" id="resultado" value="" class="form-control" disabled>
-                    </div>
-
-
-                </form>
             </div>
             <div class="col">
 
@@ -79,6 +72,17 @@
             </div>
             <div class="col">
                 <div class="btn-group-vertical" role="group">
+                    <div class="btn-group">
+                        <form name="dados">
+
+
+                            <div id="resultado" class="form-group">
+                                <input type="text" name="resultado" id="resultado" value="" class="form-control" disabled>
+                            </div>
+
+
+                        </form>
+                    </div>
                     <div class="btn-group">
                         <button onclick="num(7)" type="button" class="btn btn-secondary">7</button>
                         <button onclick="num(8)" type="button" class="btn btn-secondary ">8</button>
