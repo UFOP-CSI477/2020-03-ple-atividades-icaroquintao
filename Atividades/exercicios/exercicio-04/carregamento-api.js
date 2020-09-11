@@ -76,3 +76,33 @@ function carregarEstados() {
         .catch(error => console.error(error))
 
 }
+
+function preencherReg(data) {
+
+    let regiao = document.getElementById("regiao");
+    limparSelect(regiao);
+
+    for (let index in data) {
+        // const id = data[index].id;
+        const { id, nome, sigla } = data[index];
+
+        let option = document.createElement("option");
+        option.value = id;
+        option.innerHTML = `${nome}-${sigla}`;
+
+        regiao.appendChild(option);
+    }
+    document.getElementById("spinner").style.display = "none";
+
+}
+
+function carregarRegiao() {
+
+    document.getElementById("spinner").style.display = "block";
+
+    fetch("https://servicodados.ibge.gov.br/api/v1/localidades/regioes")
+        .then(response => response.json())
+        .then(data => preencherReg(data))
+        .catch(error => console.error(error))
+
+}

@@ -153,22 +153,19 @@
             <div class="row">
 
                 <div class="col">
-                    <input type="button" value="Carregar estados" onclick="carregarEstados()">
+                    <input type="button" value="Carregar estados" onclick="carregarRegiao()">
                 </div>
                 <div class="col">
 
-
-
-
+                    <select name="regiao" id="regiao" onchange=" carregarEstados()">
+                         <option value="">Selecione:</option>
+                     </select>
+                </div>
+                <div class="col">
 
                     <select name="estados" id="estados" onchange="carregarCidades()">
                         <option value="">Selecione:</option>
                     </select>
-
-
-
-
-
                 </div>
                 <div class="col">
 
