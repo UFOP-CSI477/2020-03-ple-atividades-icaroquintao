@@ -16,7 +16,21 @@ function calcula() {
     var valor = Array.from(document.dados.resultado.value);
     console.log(valor);
     console.log(valor.length);
-    for (let i = 0; i < valor.length; i++) {
+    var valor2 = valor;
+    console.log("VALOR tostring " + valor2.toString());
+    //Retirar as virgulas
+
+
+
+
+    valor2 = valor2.join('')
+    valor2 = eval(valor2);
+
+    console.log("VALOR EVAL " + valor2);
+
+    document.dados.resultado.value = valor2;
+
+    /*for (let i = 0; i < valor.length; i++) {
         if (valor[i] == '+') {
             var j = valor.indexOf("+");
             var primeiro = valor.slice(0, j);
@@ -65,7 +79,7 @@ function calcula() {
 
             document.dados.resultado.value = resp;
         }
-    }
+    }*/
 
 }
 
