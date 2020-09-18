@@ -15,10 +15,14 @@ $cidade = new Cidade(1, "João Monlevade", 13);
 $produto = new Produto(1, "Teclado","Peças de notebook", "Peça - pç");
 
 var_dump($estado);
-require '../App/Views/estadosView.php';
+
+$estados = $connection->query("SELECT * FROM estados");
+
 $connection = new Connection(new AdapterSQLite());
 var_dump($connection);
 
 $connection->getAdapter()->open();
 $connection->getAdapter()->get();
 $connection->getAdapter()->close();
+
+require '../App/Views/estadosView.php';

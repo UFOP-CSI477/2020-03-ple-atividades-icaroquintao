@@ -56,12 +56,11 @@
 
     <tbody>
         <?php 
-            while($e = $estado) {
+            while($e = $estados->fetch()) {
                 echo "<tr class='table-primary'>";
                 echo "<td>" .$e["id"] ."</td>\n";
                 echo "<td>" .$e["nome"] ."</td>\n";
-                echo "<td>" .$e["descricao"] ."</td>\n";
-                echo "<td>" .$e["um"] ."</td>\n";
+                echo "<td>" .$e["sigla"] ."</td>\n";
                 echo "</tr>";
                 
             }
