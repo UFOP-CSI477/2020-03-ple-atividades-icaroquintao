@@ -8,19 +8,152 @@
 </head>
 
 <body>
-    <div>
-        <a href="home.html">Home</a>
-        <a href="cadastrar.html">Criar conta</a>
-        <a href="vagas.html">Procurar vaga</a>
-        <a href="anunciar.html">Anunciar uma vaga</a>
-        <a href="perfil.html">Perfil</a>
-        <a href="">Sair</a>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+        <a class="navbar-brand" href="#">ICEA <b>VAGAS</b></a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNavDropdown">
+            <ul class="navbar-nav">
+                <li class="nav-item ">
+                    <a class="nav-link" href="home.html">Voltar</a>
+                </li>
 
-    </div>
+
+
+            </ul>
+
+        </div>
+        <div class="my-2 my-lg-0">
+
+            <a type="button" class="btn btn-outline-light" href="cadastrar.html">Cadastrar</a>
+
+        </div>
+    </nav>
+
     <header>
-        <h1>Cadastro </h1>
+        <h1>Cadastro de novo usuário</h1>
     </header>
+    <div class="container py-3">
+        <div class="row">
+            <div class="mx-auto col-sm-6">
+                <!-- form user info -->
+                <div class="card">
+                    <div class="card-header">
+                        <h4 class="mb-0">Informações de Usuário</h4>
+                    </div>
+                    <div class="card-body">
+                        <form class="form" role="form" autocomplete="off">
+                            <div class="form-group row">
+                                <label class="col-lg-3 col-form-label form-control-label">Nome completo</label>
+                                <div class="col-lg-9">
+                                    <input class="form-control" type="text">
+                                </div>
+                            </div>
 
+                            <div class="form-group row">
+                                <label class="col-lg-3 col-form-label form-control-label">Email</label>
+                                <div class="col-lg-9">
+                                    <input class="form-control" type="email" placeholder="email@gmail.com">
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <label class="col-lg-3 col-form-label form-control-label">Matrícula UFOP</label>
+                                <div class="col-lg-9">
+                                    <input class="form-control" type="text" placeholder="11.1.1111">
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <label class="col-lg-3 col-form-label form-control-label">Endereço</label>
+                                <div class="col-lg-9">
+                                    <input class="form-control" type="text">
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <label class="col-lg-3 col-form-label form-control-label">CPF</label>
+                                <div class="col-lg-9">
+                                    <input class="form-control" type="text" placeholder="111.111.111-11">
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <label class="col-lg-3 col-form-label form-control-label">Data de nascimento</label>
+                                <div class="col-lg-9">
+                                    <input type="date" name="idade" id="idade">
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <label class="col-lg-3 col-form-label form-control-label">Gênero</label>
+                                <div class="col-lg-9">
+                                    <select id="user_time_zone" class="form-control" size="0">
+                                        <option value="" selected="selected" disabled></option>
+                                        <option value="M">Masculino</option>
+                                        <option value="F">Feminino</option>
+                                        <option value="NB">Não Binário</option>
+                                        <option value="SR">Prefiro não informar</option>
+                                        </select>
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <label class="col-lg-3 col-form-label form-control-label">Curso</label>
+                                <div class="col-lg-9">
+                                    <div>
+                                        <input type="radio" name="curso" id="ec" value="EC">
+                                        <label for="ec">Engenharia da Computação</label>
+                                    </div>
+                                    <div>
+                                        <input type="radio" name="curso" id="ee" value="EE">
+                                        <label for="ee">Engenharia Elétrica</label>
+                                    </div>
+                                    <div>
+                                        <input type="radio" name="curso" id="si" value="SI">
+                                        <label for="si">Sistemas de Informação</label>
+                                    </div>
+                                    <div>
+                                        <input type="radio" name="curso" id="ep" value="EP">
+                                        <label for="ep">Engenharia de Produção</label>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <label class="col-lg-3 col-form-label form-control-label">Áreas de Interesse</label>
+                                <div class="col-lg-9">
+                                    <div>
+                                        <input type="checkbox" name="area[0]" id="web">
+                                        <label for="web">Trainee</label>
+                                    </div>
+                                    <div>
+                                        <input type="checkbox" name="area[1]" id="db">
+                                        <label for="db">Estágio</label>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <label class="col-lg-3 col-form-label form-control-label">Senha</label>
+                                <div class="col-lg-9">
+                                    <input class="form-control" type="password">
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <label class="col-lg-3 col-form-label form-control-label">Confirmar senha</label>
+                                <div class="col-lg-9">
+                                    <input class="form-control" type="password">
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <label class="col-lg-3 col-form-label form-control-label"></label>
+                                <div class="col-lg-9">
+
+                                    <input type="submit" class="btn btn-primary" value="Cadastrar">
+                                    <input type="reset" class="btn btn-secondary" value="Limpar">
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+                <!-- /form user info -->
+            </div>
+        </div>
+    </div>
 
     <form method="post" action="validar.html">
 
