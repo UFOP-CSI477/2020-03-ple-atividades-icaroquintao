@@ -13,6 +13,46 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+use App\Models\Estado;
+use App\Models\Produto;
+
 Route::get('/', function () {
     return view('welcome');
+});
+
+Route::get('/ola', function () {
+    return 'Olá, mundo!';
+});
+
+Route::get('/estados/todos', function () {
+
+    $estados = Estado::all();
+    return view('lista', ['dados'=>$estados]);
+
+});
+
+Route::get('/produtos/todos', function () {
+
+    $prod = Produto::all();
+    return view('lista2', ['dados'=>$prod]);
+
+});
+
+Route::get('/produtos/{id}', function ($id) {
+    
+    $produto = Produto::findOrFail($id);
+    if($produto == null){
+        return 'ID inválido';
+    }
+    return view('lista2', ['dados'=>$produto]);
+});
+
+Route::get('/estados/{id}', function ($id) {
+    
+    $estado = Estado::findOrFail($id);
+    if($estado == null){
+        return 'ID inválido';
+    }
+       
+    return view('lista', ['dados'=>$estado]);
 });
