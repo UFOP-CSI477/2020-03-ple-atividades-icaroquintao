@@ -15,44 +15,50 @@ use Illuminate\Support\Facades\Route;
 
 use App\Models\Estado;
 use App\Models\Produto;
+use App\Http\Controllers\EstadoController;
+use App\Http\Controllers\ProdutoController;
 
 Route::get('/', function () {
-    return view('welcome');
-});
+    return view('principal');
+})->name('principal');
 
-Route::get('/ola', function () {
-    return 'Olá, mundo!';
-});
+Route::resource('/estados', EstadoController::class);
+Route::resource('/produtos', ProdutoController::class);
+ /*        
 
-Route::get('/estados/todos', function () {
+        Route::get('/ola', function () {
+            return 'Olá, mundo!';
+        });
 
-    $estados = Estado::all();
-    return view('lista', ['dados'=>$estados]);
+        Route::get('/estados/todos', function () {
 
-});
+            $estados = Estado::all();
+            return view('lista', ['dados'=>$estados]);
 
-Route::get('/produtos/todos', function () {
+        });
 
-    $prod = Produto::all();
-    return view('lista2', ['dados'=>$prod]);
+        Route::get('/produtos/todos', function () {
 
-});
+            $prod = Produto::all();
+            return view('lista2', ['dados'=>$prod]);
 
-Route::get('/produtos/{id}', function ($id) {
-    
-    $produto = Produto::findOrFail($id);
-    if($produto == null){
-        return 'ID inválido';
-    }
-    return view('lista2', ['dados'=>$produto]);
-});
+        });
 
-Route::get('/estados/{id}', function ($id) {
-    
-    $estado = Estado::findOrFail($id);
-    if($estado == null){
-        return 'ID inválido';
-    }
-       
-    return view('lista', ['dados'=>$estado]);
-});
+        Route::get('/produtos/{id}', function ($id) {
+            
+            $produto = Produto::findOrFail($id);
+            if($produto == null){
+                return 'ID inválido';
+            }
+            return view('lista2', ['dados'=>$produto]);
+        });
+
+        Route::get('/estados/{id}', function ($id) {
+            
+            $estado = Estado::findOrFail($id);
+            if($estado == null){
+                return 'ID inválido';
+            }
+            
+            return view('lista', ['dados'=>$estado]);
+        }); */
