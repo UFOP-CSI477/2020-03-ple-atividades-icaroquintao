@@ -2,6 +2,9 @@
 
 @section('conteudo')
     
+
+<a href="{{route('estados.create')}}">Cadastrar novo estado</a>
+
 <div class="table-responsive">
     <table class="table table-bordered table-hover table-striped">
 
@@ -13,6 +16,7 @@
                 <th>ID</th>
                 <th>Nome</th>
                 <th>Sigla</th>
+                <th>Detalhes</th>
                
             </tr>
         </thead>
@@ -24,6 +28,7 @@
                 <td> {{$e->id}}</td> 
                 <td> {{$e->nome}}</td> 
                 <td> {{$e->sigla}}</td> 
+                <td><a href="{{route('estados.show', $e->id)}}">Exibir</a></td>
                 </tr>
             @endforeach
 

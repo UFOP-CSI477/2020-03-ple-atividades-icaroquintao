@@ -14,6 +14,7 @@
                 <th>Nome</th>
                 <th>Descrição</th>
                 <th>Unidade</th>
+                <th>Detalhes</th>
                
             </tr>
         </thead>
@@ -26,6 +27,7 @@
                 <td> {{$p->nome}}</td> 
                 <td> {{$p->desc}}</td> 
                 <td> {{$p->um}}</td> 
+                <td><a href="{{route('produtos.show', $p->id)}}">Exibir</a></td>
                 </tr>
             @endforeach
 
