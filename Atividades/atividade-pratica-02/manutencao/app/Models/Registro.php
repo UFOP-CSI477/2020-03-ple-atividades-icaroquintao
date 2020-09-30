@@ -5,15 +5,10 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Estado extends Model
+class Registro extends Model
 {
     use HasFactory;
 
-    protected $fillable = ['nome', 'sigla'];
+    protected $fillable = ['user_id','equipamento_id','descricao','datalimite', 'tipo'];
     // protected $guarded = ['_token']; //admin
-    public function cidades() {
-        
-        return $this->hasMany(Cidade::class);
-    }
-
 }
