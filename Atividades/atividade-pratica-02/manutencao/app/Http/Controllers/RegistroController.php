@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Equipamento;
+use App\Models\User;
 use App\Models\Registro;
 use Illuminate\Http\Request;
 
@@ -25,7 +27,9 @@ class RegistroController extends Controller
      */
     public function create()
     {
-        return view('registros.create');
+        $equipamentos = Equipamento::orderBy('nome')->get();
+        $users = User::orderBy('id')->get();
+        return view('registros.create', ['equipamentos'=>$equipamentos, 'users'=>$users]);
     }
 
     /**
@@ -62,7 +66,9 @@ class RegistroController extends Controller
      */
     public function edit(Registro $registro)
     {
-        return view('registros.edit', ['registro'=> $registro]);
+        $equipamentos = Equipamento::orderBy('nome')->get();
+        $users = User::orderBy('id')->get();
+        return view('registros.edit', ['registro'=> $registro,'equipamentos'=>$equipamentos, 'users'=>$users]);
     }
 
     /**

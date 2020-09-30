@@ -22,11 +22,17 @@
             <ul class="navbar-nav mr-auto">
            
                 <li class="nav-item ">
-                    <a class="nav-link" href="{{route('principal')}}">Home </a>
+                    <a class="nav-link" href="{{route('home')}}">Home </a>
+                </li>
+                <li class="nav-item ">
+                    <a class="nav-link" href="{{route('equipamentos.index')}}">Equipamento </a>
+                </li>
+                <li class="nav-item ">
+                    <a class="nav-link" href="{{route('registros.index')}}">Registro </a>
                 </li>
                
                 <li class="nav-item ">
-                    <a class="nav-link" href="">Área geral - Suporte </a>
+                    <a class="nav-link" href="{{route('geral')}}">Área geral - Suporte </a>
                 </li>
                 <li class="nav-item ">
                     <a class="nav-link" href="">Área administrativa</a>
@@ -56,23 +62,10 @@
 
    
 
-    <!--<div class="row ">
-
-    <div class="col-3">
-
-    </div>
-    <div class="col">
-        <img width="80%" src="https://www.solucoesindustriais.com.br/images/produtos/imagens_10329/manutencaoequipamentos_06-51-35.jpg" alt="IMG">
-        Fonte:https://opas.org.br/como-calcular-imc-formula-classificacao-tabela-e-imc-infantil/ 
-    </div>
-    <div class="col-2">
-
-    </div>
-    </div>-->
-
+  
    
   
-
+    <br>
     <footer class=" navbar bg-primary">
         <div>
             <p>Sistemas Web I - Atividade Prática 02 - Icaro Quintão EC-14.1.8083</p>

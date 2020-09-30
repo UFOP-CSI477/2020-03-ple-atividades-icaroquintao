@@ -15,12 +15,15 @@ class CreateRegistrosTable extends Migration
     {
         Schema::create('registros', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('user_id')->constrained('users');
-            $table->foreignId('equipamento_id')->constrained('equipamentos');
+            $table->unsignedBigInteger('user_id');
+            $table->unsignedBigInteger('equipamento_id');
             $table->string('descricao',191);
             $table->date('datalimite');
             $table->integer('tipo');
             $table->timestamps();
+
+            $table->foreign('user_id')->references('id')->on('users');
+            $table->foreign('equipamento_id')->references('id')->on('equipamentos');
         });
     }
 

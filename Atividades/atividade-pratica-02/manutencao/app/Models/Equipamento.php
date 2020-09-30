@@ -10,5 +10,9 @@ class Equipamento extends Model
     use HasFactory;
 
     protected $fillable = ['nome'];
-    // protected $guarded = ['_token']; //admin
+    // 1 EQUIP TEM MUITOS REG
+    public function registros() {
+        
+        return $this->hasMany(Registro::class);
+    }
 }

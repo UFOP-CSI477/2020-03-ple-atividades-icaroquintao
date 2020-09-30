@@ -23,7 +23,7 @@ class EquipamentoFactory extends Factory
     public function definition()
     {
         return [
-            'nome' => $this->faker->lastName,
+            'nome' => $this->faker->lastName
             
         ];
     }

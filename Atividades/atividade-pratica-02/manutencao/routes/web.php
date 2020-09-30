@@ -1,6 +1,8 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\EquipamentoController;
+use App\Http\Controllers\RegistroController;
 
 /*
 |--------------------------------------------------------------------------
@@ -13,7 +15,19 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
+Route::get('/p', function () {
     return view('principal');
 })->name('principal');
+
+Route::get('/', function () {
+    return view('home');
+})->name('home');
+
+Route::get('/geral', function () {
+    return view('geral');
+})->name('geral');
+
+
+Route::resource('/equipamentos', EquipamentoController::class);
+Route::resource('/registros', RegistroController::class);
 

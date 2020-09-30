@@ -11,4 +11,15 @@ class Registro extends Model
 
     protected $fillable = ['user_id','equipamento_id','descricao','datalimite', 'tipo'];
     // protected $guarded = ['_token']; //admin
+
+    public function equipamento() {
+        
+        return $this->belongsTo(Equipamento::class);
+    }
+
+    public function user() {
+        
+        return $this->belongsTo(User::class);
+    }
+
 }
