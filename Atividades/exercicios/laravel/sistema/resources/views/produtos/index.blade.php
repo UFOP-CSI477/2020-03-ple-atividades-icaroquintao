@@ -1,6 +1,8 @@
 @extends('principal')
 
 @section('conteudo')
+
+<a href="{{route('produtos.create')}}">Cadastrar novo produto</a>
     
 <div class="table-responsive">
     <table class="table table-bordered table-hover table-striped">

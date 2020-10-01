@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use Illuminate\Support\Facades\Auth;
 
 /*
 |--------------------------------------------------------------------------
@@ -19,13 +20,14 @@ use App\Http\Controllers\EstadoController;
 use App\Http\Controllers\ProdutoController;
 use App\Http\Controllers\CidadeController;
 
+
 Route::get('/', function () {
     return view('principal');
 })->name('principal');
 
-Route::resource('/estados', EstadoController::class);
-Route::resource('/produtos', ProdutoController::class);
-Route::resource('/cidades', CidadeController::class);
+Route::resource('/estados', EstadoController::class)->middleware('auth');
+Route::resource('/produtos', ProdutoController::class)->middleware('auth');
+Route::resource('/cidades', CidadeController::class)->middleware('auth');
  /*        
 
         Route::get('/ola', function () {
@@ -64,3 +66,6 @@ Route::resource('/cidades', CidadeController::class);
             
             return view('lista', ['dados'=>$estado]);
         }); */
+Auth::routes();
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
