@@ -3,7 +3,8 @@
 @extends('principal')
 
 @section('conteudo')
-    
+
+
 
 <div class="container-fluid">
     <div class="row bg-warning">
@@ -22,7 +23,7 @@
 
         
         <div class="col">
-           <p> <h1><i class="fas fa-wrench"></i> Manutenções</h1></p>
+           <p> <h1><i class="far fa-list-alt"></i> Relatório de Manutenção</h1></p>
         </div>
         
     </div>
@@ -50,10 +51,15 @@
 
 </div>
 
+
+@foreach ($equipamentos as $e)
+
+<h1>{{$e->nome}}</h1>
+
 <div class="table-responsive">
     <table class="table table-bordered table-hover table-striped">
 
-        <caption>Lista de Manutenções</caption>
+       
 
         <thead>
 
@@ -64,16 +70,19 @@
                 <th>Descrição</th>
                 <th>Data Limite</th>
                 <th>Tipo</th>
-                <th>Editar ou Excluir</th>
+               
                 
                
             </tr>
         </thead>
 
         <tbody>
-          
+            @php $aux = 0
+            @endphp
             @foreach ($registros as $r)
+                @if($e->id == $r->equipamento_id)  
                 <tr>
+                    @php  $aux = $aux + 1 @endphp
                 <td> {{$r->id}}</td>                 
                 <td> {{$r->equipamento->nome}}</td>
                 <td> {{$r->user->name}} - ({{$r->user->email}})</td> 
@@ -90,19 +99,25 @@
                     @elseif($r->tipo == 3)
                         Urgente
                     @endif</td> 
-                 
-                <td><a href="{{route('registros.show', $r->id)}}">Editar/Excluir</a></td>
+                
+                
                 </tr>
+                @endif
             @endforeach
-
          
         </tbody>
+        <tfoot>
+            
+            <h5>Quantidade de Registros: {{$aux}}</h5>    
+        </tfoot>
 
        
 
     </table>
 </div>
 
-   
+
+
+@endforeach 
 
 @endsection

@@ -16,7 +16,7 @@ class RegistroController extends Controller
      */
     public function index()
     {
-        $registros = Registro::orderBy('nome')->get();
+        $registros = Registro::orderBy('datalimite')->get();
         return view('registros.index', ['registros' => $registros]);
     }
 
@@ -41,9 +41,10 @@ class RegistroController extends Controller
     public function store(Request $request)
     {
         //dd($request);
+        
       
         Registro::create($request->all());
-        session()->flash('mensagem', 'Registro cadastrado com sucesso!');
+        session()->flash('mensagem', 'Manutenção cadastrado com sucesso!');
         return redirect()->route('registros.index');
     }
 
@@ -80,8 +81,9 @@ class RegistroController extends Controller
      */
     public function update(Request $request, Registro $registro)
     {
-        //dd($request->all());
+        
         $registro->fill($request->all());
+        //dd($registro->datalimite->format('Y-m-d'));
         $registro->save();
         
         session()->flash('mensagem', 'Registro atualizado com sucesso!');

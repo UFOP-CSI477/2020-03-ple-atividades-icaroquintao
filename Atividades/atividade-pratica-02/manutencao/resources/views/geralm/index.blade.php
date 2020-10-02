@@ -6,30 +6,22 @@
     
 
 <div class="container-fluid">
-    <div class="row bg-warning">
+    <div class="row bg-info">
 
         <div class="col">
            
         </div>
         <div class="col">
-           <p> <h1><i class="fas fa-toolbox"></i> Área Administrativa</h1></p>
+           <p> <h1>Área Geral - Suporte</h1></p>
         </div>
         <div class="col">
             
         </div>
     </div>
-    <div class="row bg-info">
-
-        
-        <div class="col">
-           <p> <h1><i class="fas fa-wrench"></i> Manutenções</h1></p>
-        </div>
-        
-    </div>
     <br>
     <div class="row">
         <div class="col">
-            <p>  <a type="button" class="btn btn-primary  btn-block" href="{{ route('areaadm')}}"><i class="fas fa-arrow-left"></i> Voltar</a>           </p>
+            <p>  <a type="button" class="btn btn-primary  btn-block" href="{{ route('ageral')}}"><i class="fas fa-arrow-left"></i> Voltar</a>           </p>
         </div>
 
         <div class="col">
@@ -40,15 +32,22 @@
              </div>
         
     </div>
- 
-<br>
+   
+    <div class="row">
+        <div class="col">
+            <h1><i class="fas fa-clipboard-list"></i> Lista de Manutenções Cadastradas para os Equipamentos</h1>
+        </div>
+
+        
+       
+    </div>
+   
+
+    
+    </div>
 
 
 
-
-
-
-</div>
 
 <div class="table-responsive">
     <table class="table table-bordered table-hover table-striped">
@@ -58,13 +57,12 @@
         <thead>
 
             <tr class="thead-dark">
-                <th>ID</th>
+                <th>Data Limite</th>
                 <th>Equipamento</th>
                 <th>Usuário</th>
-                <th>Descrição</th>
-                <th>Data Limite</th>
                 <th>Tipo</th>
-                <th>Editar ou Excluir</th>
+                <th>Descrição</th>
+                
                 
                
             </tr>
@@ -74,12 +72,11 @@
           
             @foreach ($registros as $r)
                 <tr>
-                <td> {{$r->id}}</td>                 
+                <td> {{$r->datalimite}}</td>
                 <td> {{$r->equipamento->nome}}</td>
-                <td> {{$r->user->name}} - ({{$r->user->email}})</td> 
-                <td> {{$r->descricao}}</td> 
-                <td> {{$r->datalimite}}</td> 
-                <td>  @if( $r->tipo == 1)
+                <td> {{$r->user->name}}</td>
+                <td> 
+                    @if( $r->tipo == 1)
                     Preventiva
                 
                 
@@ -89,9 +86,13 @@
                 
                     @elseif($r->tipo == 3)
                         Urgente
-                    @endif</td> 
+                    @endif
+                </td> 
+                <td> {{$r->descricao}}</td> 
                  
-                <td><a href="{{route('registros.show', $r->id)}}">Editar/Excluir</a></td>
+                
+                 
+               
                 </tr>
             @endforeach
 

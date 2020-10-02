@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Equipamento;
 use Illuminate\Http\Request;
+use App\Models\Registro;
 
 class EquipamentoController extends Controller
 {
@@ -16,6 +17,17 @@ class EquipamentoController extends Controller
     {
         $equipamentos = Equipamento::orderBy('nome')->get();
         return view('equipamentos.index', ['equipamentos' => $equipamentos]);
+    }
+
+    /**
+     * Display a listing of the resource.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function lista()
+    {
+        $equipamentos = Equipamento::orderBy('nome')->get();
+        return view('equipamentos.lista', ['equipamentos' => $equipamentos]);
     }
 
     /**
@@ -90,10 +102,19 @@ class EquipamentoController extends Controller
      */
     public function destroy(Equipamento $equipamento)
     {
-       //dd($equipamento);
+       
         //Validação
-       $equipamento->delete();
-       session()->flash('mensagem', 'Equipamento excluído com sucesso!');
-        return redirect()->route('equipamentos.index');
+        $registros = Registro::orderBy('id')->where('equipamento_id', $equipamento->id)->get();
+        //dd($registros);
+            if($registros->count() > 0){
+                session()->flash('mensagem2', 'Equipamento não pode ser excluido! Ele está cadastrado em alguma manutenção!');
+                
+            }else{
+        
+            $equipamento->delete();
+            session()->flash('mensagem', 'Equipamento excluído com sucesso!');
+            
+            }
+            return redirect()->route('equipamentos.index');  
     }
 }

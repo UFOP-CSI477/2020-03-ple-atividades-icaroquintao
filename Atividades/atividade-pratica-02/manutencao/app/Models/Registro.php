@@ -11,6 +11,7 @@ class Registro extends Model
 
     protected $fillable = ['user_id','equipamento_id','descricao','datalimite', 'tipo'];
     // protected $guarded = ['_token']; //admin
+    //protected $dates = ['datalimite'];
 
     public function equipamento() {
         

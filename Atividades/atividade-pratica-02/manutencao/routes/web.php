@@ -1,9 +1,13 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use Illuminate\Support\Facades\Auth;
 use App\Http\Controllers\EquipamentoController;
 use App\Http\Controllers\RegistroController;
-
+use App\Http\Controllers\GeralController;
+use App\Http\Controllers\GeralmController;
+use App\Http\Controllers\UsuarioController;
+use App\Http\Controllers\ManutencaoController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -20,14 +24,26 @@ Route::get('/p', function () {
 })->name('principal');
 
 Route::get('/', function () {
-    return view('home');
-})->name('home');
+    return view('inicial');
+})->name('inicial');
 
-Route::get('/geral', function () {
-    return view('geral');
-})->name('geral');
+Route::get('/ageral', function () {
+    return view('ageral');
+})->name('ageral');
+
+Route::get('/areaadm', function () {
+    return view('areaadm');
+})->name('areaadm')->middleware('auth');
 
 
-Route::resource('/equipamentos', EquipamentoController::class);
-Route::resource('/registros', RegistroController::class);
+Route::resource('/manutencao/listar', GeralmController::class);
+Route::resource('/equipamento/listar', GeralController::class);
+Route::resource('/equipamentos', EquipamentoController::class)->middleware('auth');
+Route::resource('/registros', RegistroController::class)->middleware('auth');
+Route::resource('/usuarios', UsuarioController::class)->middleware('auth');
+Route::resource('/manutencoes', ManutencaoController::class)->middleware('auth');
 
+
+Auth::routes();
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');

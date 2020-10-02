@@ -1,23 +1,23 @@
-
 @extends('principal')
 
-
 @section('conteudo')
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="col-md-8">
+            <div class="card">
+                <div class="card-header">{{ __('Dashboard') }}</div>
 
+                <div class="card-body">
+                    @if (session('status'))
+                        <div class="alert alert-success" role="alert">
+                            {{ session('status') }}
+                        </div>
+                    @endif
 
-
-  <div class="row ">
-
-    <div class="col-3">
-
+                    {{ __('You are logged in!') }}
+                </div>
+            </div>
+        </div>
     </div>
-    <div class="col">
-        <img width="80%" src="https://www.solucoesindustriais.com.br/images/produtos/imagens_10329/manutencaoequipamentos_06-51-35.jpg" alt="IMG">
-        <!--Fonte:https://opas.org.br/como-calcular-imc-formula-classificacao-tabela-e-imc-infantil/ -->
-    </div>
-    <div class="col-2">
-
-    </div>
-    </div>
-
-    @endsection
+</div>
+@endsection

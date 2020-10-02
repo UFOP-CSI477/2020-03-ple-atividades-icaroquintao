@@ -20,7 +20,7 @@
 
         
         <div class="col">
-           <p> <h1><i class="fas fa-hammer"></i> Equipamentos</h1></p>
+           <p> <h1><i class="fas fa-list-alt"></i> Relatório de Usuários</h1></p>
         </div>
         
     </div>
@@ -42,36 +42,40 @@
 <br>
 
 
+
+
+
+
 </div>
-
-
-
-
-
 
 <div class="table-responsive">
     <table class="table table-bordered table-hover table-striped">
 
-        <caption>Lista de Equipamentos</caption>
+        <caption>Lista de Usuários do Sistema</caption>
 
         <thead>
 
             <tr class="thead-dark">
                 <th>ID</th>
                 <th>Nome</th>
-                <th>Editar ou Excluir</th>
+                <th>Email</th>
+                
+           
+                
                
             </tr>
         </thead>
 
         <tbody>
           
-            @foreach ($equipamentos as $e)
+            @foreach ($usuarios as $u)
                 <tr>
-                <td> {{$e->id}}</td> 
-                <td> {{$e->nome}}</td> 
+                <td> {{$u->id}}</td>                 
+                <td> {{$u->name}}</td>
+                <td> {{$u->email}}</td> 
+             
                  
-                <td><a href="{{route('equipamentos.show', $e->id)}}">Editar/Excluir</a></td>
+         
                 </tr>
             @endforeach
 
