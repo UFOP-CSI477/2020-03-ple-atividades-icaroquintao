@@ -30,7 +30,7 @@ class RegistroFactory extends Factory
             'equipamento_id' =>Equipamento::factory(),
             'descricao' =>$this->faker->text($maxNbChars = 200),
             'datalimite' =>$this->faker->date($format = 'Y-m-d', $max = 'now'), 
-            'tipo' =>$this->faker->randomDigitNotNull
+            'tipo' =>$this->faker->numberBetween($min = 1, $max = 3) 
             
             
         ];
