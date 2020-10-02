@@ -24,7 +24,7 @@ class EquipamentoFactory extends Factory
     {
         return [
             'nome' => $this->faker->lastName
-            
+            //Não achei nada relacionado a obejetos no faker :/
         ];
     }
 }
