@@ -47,6 +47,9 @@
             </div>
 
         <div class="col">
+            <div class="alert alert-warning" role="alert" id="mostrar" style="display: none">
+                O campo Nome não pode estar vazio, conter números ou caracteres especiais!
+              </div>
             <p><form method="post" action="{{ route('equipamentos.store')}}">
                 @csrf
                 <div class="form-group">
@@ -67,7 +70,7 @@
 
         <div class="col">
             <p> <div class="text-right">
-                <input type="submit" value="Cadastrar" class="btn btn-primary">
+                <input type="submit" value="Cadastrar" class="btn btn-primary" onclick="return verificaequip();">
                 <input type="reset" value="Limpar" class="btn btn-danger">
             </div>
         

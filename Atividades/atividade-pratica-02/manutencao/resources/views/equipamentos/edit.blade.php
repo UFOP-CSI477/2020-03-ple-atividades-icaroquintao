@@ -47,6 +47,9 @@
     </div>
 
     <div class="col">
+        <div class="alert alert-warning" role="alert" id="mostrar" style="display: none">
+            O campo Nome não pode estar vazio, conter números ou caracteres especiais!
+          </div>
         <p>  <form method="post" action="{{ route('equipamentos.update', $equipamento->id)}}">
             @csrf
             @method('PUT')
@@ -71,7 +74,7 @@
     <div class="col">
         <p> 
             <div class="text-right">
-                <input type="submit" value="Atualizar" class="btn btn-success">
+                <input type="submit" value="Atualizar" class="btn btn-success" onclick="return verificaequip();">
                 
             </div>
         

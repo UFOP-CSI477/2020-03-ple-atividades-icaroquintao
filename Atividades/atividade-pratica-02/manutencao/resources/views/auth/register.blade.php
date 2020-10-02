@@ -8,7 +8,7 @@
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="card">
-                <div class="card-header">Cadastrar Novo Usuário</div>
+                <div class="card-header bg-primary"> <a class="text-white">Cadastrar Novo Usuário</a> </div>
 
                 <div class="card-body">
                     <form method="POST" action="{{ route('register') }}">

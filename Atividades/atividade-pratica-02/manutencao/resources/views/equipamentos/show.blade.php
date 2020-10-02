@@ -46,34 +46,25 @@
 
 <div class="container-fluid">
 
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="col-md-8">
+            <div class="card">
+                <div class="card-header bg-dark"><a class="text-white">Equipamento #{{$equipamento->id}}</a></div>
 
-    <div class="row">
-        <div class="col">
+                <div class="card-body">
+                    @if (session('status'))
+                        <div class="alert alert-success" role="alert">
+                            {{ session('status') }}
+                        </div>
+                    @endif
+                    <p>  <h5>ID: {{$equipamento->id}}</h5> </p>
+                    <p> <h5>Nome do equipamento: {{$equipamento->nome}}</h5></p>
+                </div>
             </div>
-
-        <div class="col">
-            <p>  <h5>ID: {{$equipamento->id}}</h5> </p>
-       
         </div>
-        <div class="col">
-             </div>
-        
     </div>
-
-    <div class="row">
-        <div class="col">
-            </div>
-
-        <div class="col">
-           <p> <h5>Nome do equipamento: {{$equipamento->nome}}</h5></p>
-       
-        </div>
-        <div class="col">
-             </div>
-        
-    </div>
-<br>
-<br>
+</div>
 <br>
 <br>
     <div class="row">
@@ -83,18 +74,7 @@
         <div class="col">
             <p> <a href="{{route('equipamentos.edit', $equipamento->id)}}" class="btn btn-primary btn-lg btn-block">Editar</a> </p>
        
-        </div>
-        <div class="col">
-             </div>
-        
-    </div>
-
-    <div class="row">
-        <div class="col">
-            </div>
-
-        <div class="col">
-            <p> <form name="frmDelete" action="{{route('equipamentos.destroy', $equipamento->id)}}" method="post" 
+             <p> <form name="frmDelete" action="{{route('equipamentos.destroy', $equipamento->id)}}" method="post" 
                 onsubmit="return confirm('Confirma a exclusão do equipamento?')">
             
             @csrf
@@ -104,12 +84,13 @@
             
             
             </form> </p>
-       
         </div>
         <div class="col">
              </div>
         
     </div>
+
+
 
 
 

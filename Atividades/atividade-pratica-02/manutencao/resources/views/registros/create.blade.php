@@ -34,7 +34,9 @@
         </div>
 
         <div class="col">
-           
+            <div class="alert alert-warning" role="alert" id="mostrar" style="display: none">
+                Os campos não estão preenchidos corretamente!
+              </div>
        
         </div>
         <div class="col">
@@ -112,7 +114,7 @@
 
 
     <div class="text-right">
-        <input type="submit" value="Cadastrar" class="btn btn-primary">
+        <input type="submit" value="Cadastrar" class="btn btn-primary" onclick="return verificareg();">
         <input type="reset" value="Limpar" class="btn btn-danger">
     </div>
 

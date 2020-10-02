@@ -52,7 +52,7 @@ class EquipamentoController extends Controller
       
         Equipamento::create($request->all());
         session()->flash('mensagem', 'Equipamento cadastrado com sucesso!');
-        return redirect()->route('equipamentos.index');
+        return redirect()->route('areaadm');
     }
 
     /**
