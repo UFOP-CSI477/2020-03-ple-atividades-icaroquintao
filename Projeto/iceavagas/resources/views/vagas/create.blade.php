@@ -2,35 +2,33 @@
 
 
 @section('conteudo')
-
+@if(Auth::user()->admin == 1)
 
 
 
 <div class="container-fluid">
     <div class="row bg-warning">
 
-        <div class="col">
+        <div class="col-4">
            
         </div>
         <div class="col">
-           <p> <h1><i class="fas fa-toolbox"></i> Área Administrativa</h1></p>
+           <p> <h1><i class="fas fa-user-lock"></i> Área Administrativa</h1></p>
         </div>
-        <div class="col">
-            
-        </div>
+       
     </div>
     <div class="row bg-info">
 
         
         <div class="col">
-           <p> <h1><i class="fas fa-wrench"></i> Cadastro de Manutenções</h1></p>
+           <p> <h1 class="text-white"><i class="fas fa-plus-circle"></i> Cadastro de Vaga</h1></p>
         </div>
         
     </div>
     <br>
     <div class="row">
         <div class="col">
-            <p>  <a type="button" class="btn btn-primary  btn-block" href="{{ route('vagas.index')}}"><i class="fas fa-arrow-left"></i> Voltar</a>           </p>
+            <p>  <a type="button" class="btn btn-info  btn-block" href="{{ route('admin')}}"><i class="fas fa-arrow-left"></i> Voltar</a>           </p>
         </div>
 
         <div class="col">
@@ -166,4 +164,29 @@
 
 
 </div>
+@else
+<br>
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="col-md-8">
+            <div class="card">
+                <div class="card-header bg-danger text-white">{{ __('Atenção! Você não tem permissão para acessar essa página!') }}</div>
+
+                <div class="card-body">
+                    @if (session('status'))
+                        <div class="alert alert-success" role="alert">
+                            {{ session('status') }}
+                        </div>
+                    @endif
+
+                    Efetue login como administrador
+                    <br>
+                    <br>
+                    <a class="btn btn-danger" href="{{route('inicial')}}">Voltar</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+@endif
 @endsection

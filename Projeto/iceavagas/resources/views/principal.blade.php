@@ -43,7 +43,7 @@
                 @else
                 @if(Auth::user()->admin == 1)
                 <li class="nav-item ">
-                    <a class="nav-link" href="{{route('vagas.index')}}">Área Administrativa</a>
+                    <a class="nav-link" href="{{route('admin')}}">Área Administrativa</a>
                 </li>
               @endif
 
@@ -58,11 +58,14 @@
                 <!-- Authentication Links -->
                 @guest
                     <li class="nav-item">
-                        <a class="nav-link" href="{{ route('login') }}">{{ __('Login') }}</a>
+                        <a class="btn btn-light" href="{{ route('login') }}"><i class="fas fa-sign-in-alt"></i> Entrar</a>
+                    </li>
+                    <li class="nav-item">
+                        <a>&nbsp; &nbsp; &nbsp;</a>
                     </li>
                     @if (Route::has('register'))
                         <li class="nav-item">
-                            <a class="nav-link" href="{{ route('register') }}">{{ __('Register') }}</a>
+                            <a class="btn btn-outline-light" href="{{ route('register') }}"><i class="fas fa-user-plus"></i> Cadastrar</a>
                         </li>
                     @endif
                 @else
@@ -75,7 +78,7 @@
                             <a class="dropdown-item" href="{{ route('logout') }}"
                                onclick="event.preventDefault();
                                              document.getElementById('logout-form').submit();">
-                                {{ __('Logout') }}
+                                {{ __('Sair') }}
                             </a>
 
                             <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">

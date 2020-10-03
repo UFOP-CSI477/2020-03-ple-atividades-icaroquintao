@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Auth;
 use App\Http\Controllers\VagaController;
 use App\Http\Controllers\GeralController;
+use App\Http\Controllers\UsuarioController;
 
 /*
 |--------------------------------------------------------------------------
@@ -18,6 +19,9 @@ use App\Http\Controllers\GeralController;
 Route::get('/p', function () {
     return view('principal');
 })->name('principal');
+Route::get('/admin', function () {
+    return view('admin');
+})->name('admin');
 
 Route::get('/', function () {
     return view('inicial');
@@ -25,7 +29,7 @@ Route::get('/', function () {
 
 Route::resource('/vagas', VagaController::class)->middleware('auth');;
 Route::resource('/geral', GeralController::class)->middleware('auth');;
-
+Route::resource('/usuarios', UsuarioController::class)->middleware('auth');
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');

@@ -1,10 +1,8 @@
-
-
 @extends('principal')
 
 @section('conteudo')
-    
-@if(Auth::user()->admin == 1)
+@if(Auth::user()->admin == 1)   
+
 <div class="container-fluid">
     <div class="row bg-warning">
 
@@ -20,7 +18,7 @@
 
         
         <div class="col">
-           <p> <h1 class="text-white"><i class="fas fa-users-cog"></i> Relatório e Gerenciamento de Vagas</h1></p>
+           <p> <h1 class="text-white"><i class="fas fa-users"></i> Relatório de Usuários</h1></p>
         </div>
         
     </div>
@@ -39,29 +37,33 @@
              </div>
         
     </div>
+ 
+<br>
+
+
+
+
+
 
 </div>
 
 <div class="table-responsive">
     <table class="table table-bordered table-hover table-striped">
 
-        <caption>Relatório de Vagas</caption>
+        <caption>Lista de Usuários do Sistema</caption>
 
         <thead>
 
             <tr class="thead-dark">
                 <th>ID</th>
-                <th>Usuário que indicou</th>
-                <th>Empresa</th>
-            <!--    <th>Email da Empresa</th> -->
-                <th>Descrição</th>
-                <th>Local</th>
-                <th>Data de Encerramento das Insc</th>
-                <th>Area</th>
-                <th>Tipo</th>
-                <th>Status</th>
-                <th>Link de Inscrição</th>
-                <th>Gerenciar</th>
+                <th>Nome</th>
+                <th>Curso</th>
+                <th>Matrícula</th>
+                <th>Área</th>
+                <th>Email</th>
+                <th>Permissão</th>
+                
+           
                 
                
             </tr>
@@ -69,46 +71,41 @@
 
         <tbody>
           
-            @foreach ($vagas as $v)
+            @foreach ($usuarios as $u)
                 <tr>
-                <td> {{$v->id}}</td>                 
-                <td> {{$v->user->name}}</td>
-                <td> {{$v->empresa}}</td> 
-                <!--<td> {{$v->email}}</td> -->
-                <td> {{$v->descricao}}</td> 
-                <td> {{$v->local}}</td> 
-                <td> {{$v->data}}</td> 
-                <td> {{$v->area}}</td> 
-                <td> {{$v->tipo}}</td>
-                
-                <td
-                @if( $v->status == 1)
-                    class="bg-warning"
-                
-                
-                    @elseif($v->status == 2)
-                    class="bg-success"
-                    
-                    @elseif($v->status == 3)
-                    class="bg-danger"
-                    
+                <td> {{$u->id}}</td>                 
+                <td> {{$u->name}}</td>
+                <td> {{$u->curso}}</td>
+                <td> {{$u->matricula}}</td>
+                <td> 
+                    @if($u->area == '0')
+                    Administrador
+                    @elseif($u->area == 'T')
+                    Trainee
+                    @elseif($u->area == 'E')
+                    Estágio
+                    @elseif($u->area == 'T/E')
+                    Trainee e Estágio
                     @endif
                 
-                >  @if( $v->status == 1)
-                    Pendente
+                </td>
+                <td> {{$u->email}}</td> 
+                <td
+                @if($u->admin == 1)
+                class="bg-info text-white"
                 
+                @endif
+                >
+                @if($u->admin == 1)
+                Administrador
+                @elseif($u->admin == 0)
+                Usuário
+                @endif
                 
-                    @elseif($v->status == 2)
-                        Exibir
-                    
-                
-                    @elseif($v->status == 3)
-                        Encerrado
-                    @endif</td>  
-                <td> <a href="{{$v->link}}" target="_blank"> {{$v->link}} </a></td>  
-       
+                </td> 
+             
                  
-                <td><a href="{{route('vagas.show', $v->id)}}" class="btn btn-info">Editar/Excluir</a></td>
+         
                 </tr>
             @endforeach
 

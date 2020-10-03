@@ -1,11 +1,12 @@
 @extends('principal')
 
 @section('conteudo')
+<br>
 <div class="container">
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="card">
-                <div class="card-header bg-info"> <a class="text-white">{{ __('Cadastrar') }}</a></div>
+                <div class="card-header bg-info"> <a class="text-white"><i class="fas fa-user-plus"></i> Cadastrar</a></div>
 
                 <div class="card-body">
                     <form method="POST" action="{{ route('register') }}">

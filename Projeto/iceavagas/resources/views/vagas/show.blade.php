@@ -2,45 +2,56 @@
 
 
 @section('conteudo')
-
+@if(Auth::user()->admin == 1)
 
 <div class="container-fluid">
     <div class="row bg-warning">
 
-        <div class="col">
+        <div class="col-4">
            
         </div>
         <div class="col">
-           <p> <h1><i class="fas fa-toolbox"></i> Área Administrativa</h1></p>
+           <p> <h1><i class="fas fa-user-lock"></i> Área Administrativa</h1></p>
         </div>
-        <div class="col">
-            
-        </div>
+       
     </div>
     <div class="row bg-info">
 
         
         <div class="col">
-           <p> <h1><i class="fas fa-wrench"></i> Manutenções</h1></p>
+        <p> <h1 class="text-white"><i class="fas fa-users-cog"></i> Gerenciar Vaga #{{$vaga->id}}</h1></p>
         </div>
         
     </div>
     <br>
+
     <div class="row">
         <div class="col">
-            <p>  <a type="button" class="btn btn-primary  btn-block" href="{{ route('vagas.index')}}"><i class="fas fa-arrow-left"></i> Voltar</a>           </p>
+            <p>  <a type="button" class="btn btn-info  btn-block" href="{{ route('vagas.index')}}"><i class="fas fa-arrow-left"></i> Voltar</a>           </p>
         </div>
 
+      
         <div class="col">
-           
+            <p><a href="{{route('vagas.edit', $vaga->id)}}" class="btn btn-primary btn-block"><i class="fas fa-edit"></i> Editar</a>  </p>
        
         </div>
         <div class="col">
-             </div>
+            <form name="frmDelete" action="{{route('vagas.destroy', $vaga->id)}}" method="post" 
+                onsubmit="return confirm('Confirma a exclusão da vaga?')">
+            
+            @csrf
+            @method('DELETE')
+            
+            <button type="submit"  class="btn btn-danger btn-block"><i class="fas fa-trash-alt"></i> Excluir</button>
+            
+            
+            </form>
+        </div>
         
     </div>
+
  
-<br>
+
 
 
 
@@ -51,19 +62,6 @@
 
 <div class="container-fluid">
 
-
-    <div class="row">
-        <div class="col">
-            </div>
-
-        <div class="col">
-            <p>  <h4>Detalhes da Vaga #{{$vaga->id}}</h4></p>
-       
-        </div>
-        <div class="col">
-             </div>
-        
-    </div>
 
 
 
@@ -131,7 +129,7 @@
                                     @elseif($vaga->status == 3)
                                         Encerrado
                                     @endif</td>  
-                                <td> <a href="{{$vaga->link}}"> {{$vaga->link}} </a></td>
+                                <td> <a href="{{$vaga->link}}" target="_blank"> {{$vaga->link}} </a></td>
                         </tbody>
                 
                        
@@ -150,35 +148,9 @@
         <div class="col">
             </div>
 
-        <div class="col">
-            <p><a href="{{route('vagas.edit', $vaga->id)}}" class="btn btn-primary btn-lg btn-block">Editar</a>  </p>
-       
-        </div>
-        <div class="col">
-             </div>
         
     </div>
-    <div class="row">
-        <div class="col">
-            </div>
 
-        <div class="col">
-            <p><form name="frmDelete" action="{{route('vagas.destroy', $vaga->id)}}" method="post" 
-                onsubmit="return confirm('Confirma a exclusão da vaga?')">
-            
-            @csrf
-            @method('DELETE')
-            
-            <input type="submit" value="Excluir" class="btn btn-danger btn-lg btn-block">
-            
-            
-            </form> </p>
-       
-        </div>
-        <div class="col">
-             </div>
-        
-    </div>
 
 
 
@@ -192,5 +164,29 @@
 
 
 
+@else
+<br>
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="col-md-8">
+            <div class="card">
+                <div class="card-header bg-danger text-white">{{ __('Atenção! Você não tem permissão para acessar essa página!') }}</div>
 
+                <div class="card-body">
+                    @if (session('status'))
+                        <div class="alert alert-success" role="alert">
+                            {{ session('status') }}
+                        </div>
+                    @endif
+
+                    Efetue login como administrador
+                    <br>
+                    <br>
+                    <a class="btn btn-danger" href="{{route('inicial')}}">Voltar</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+@endif
 @endsection
