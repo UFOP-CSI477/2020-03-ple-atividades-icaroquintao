@@ -1,6 +1,9 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use Illuminate\Support\Facades\Auth;
+use App\Http\Controllers\VagaController;
+use App\Http\Controllers\GeralController;
 
 /*
 |--------------------------------------------------------------------------
@@ -12,7 +15,17 @@ use Illuminate\Support\Facades\Route;
 | contains the "web" middleware group. Now create something great!
 |
 */
+Route::get('/p', function () {
+    return view('principal');
+})->name('principal');
 
 Route::get('/', function () {
-    return view('welcome');
-});
+    return view('inicial');
+})->name('inicial');
+
+Route::resource('/vagas', VagaController::class)->middleware('auth');;
+Route::resource('/geral', GeralController::class)->middleware('auth');;
+
+Auth::routes();
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
