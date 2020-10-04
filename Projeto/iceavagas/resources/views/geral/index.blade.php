@@ -12,7 +12,7 @@
            
         </div>
         <div class="col">
-           <p> <h1><i class="fas fa-toolbox"></i> Mural de Vagas</h1></p>
+           <p> <h1 class="text-white"><i class="fas fa-user-tie"></i> Mural de Vagas</h1></p>
         </div>
         <div class="col">
             
@@ -24,36 +24,56 @@
 </div>
 
 <div class="container-fluid">
-    <div class="row bg-info">
 
-        <div class="col">
-           
-        </div>
-        <div class="col">
-           <p> <h1 class="text-white">Inscrições Abertas</h1> </p>
-        </div>
-        <div class="col">
-            
-        </div>
+
+    <div class="row">
+
+      <div class="col">
+        <p> <h3 class="">Filtrar vagas:</h3> </p>
+      </div>
+      <div class="col">
+        <br>
+        <p>
+        <input type="text" id="myFilter" class="form-control" onkeyup="myFunction()" placeholder="Pesquise uma vaga, local ou Trainee/Estágio..">
+        </p>
+      
+      </div>
+      <div class="col">
+
+      </div>
+  </div>
+
+  <div class="row bg-info">
+
+    <div class="col">
+       
     </div>
+    <div class="col">
+       <p> <h1 class="text-white">Inscrições Abertas</h1> </p>
+    </div>
+    <div class="col">
+        
+    </div>
+</div>
 
-    <br>
+<br>
 
 </div>
-<h1>Inscrições Abertas</h1>
+
+
 <div class="row">
     
 @foreach ($vagas as $v)
     @if($v->status == 2)
     <div class="col-3">
-    <div class="card " style="width: 18rem;">
+    <div class="card" id="cards" style="width: 18rem;">
         <img class="card-img-top" src="{{asset('/img/img01.png')}}" alt="Card image">
         <div class="card-body bg-info">
           <h5 class="card-title text-white"><b>{{$v->titulo}}</b></h5>
           <p class="card-text text-white"><b>Empresa:</b> {{$v->empresa}}</p>
         </div>
         <ul class="list-group list-group-flush ">
-        <li class="list-group-item "><b>Local:</b> {{$v->local}}</li>
+        <li class="list-group-item "><b>Local:</b> <a class="text-dark">{{$v->local}}</a></li>
           <li class="list-group-item "><b>Área:</b>
          @if($v->area == 'EC')
          Engenharia da Computação
@@ -65,13 +85,13 @@
          Sistemas de Informação
          @endif
         </li>
-          <li class="list-group-item "><b>Tipo:</b> 
+          <li class="list-group-item" id="tipo"><b>Tipo:</b> 
             @if($v->tipo == 'T')
-            Trainee
+            <a class="text-dark">Trainee</a>
             @elseif($v->tipo == 'E')
-            Estágio
+            <a class="text-dark">Estágio</a>
             @elseif($v->tipo == 'E/T')
-            Estágio e Trainee
+            <a class="text-dark">Estágio e Trainee</a>
             
             @endif
         
@@ -122,7 +142,7 @@
           <p class="card-text text-white"><b>Empresa:</b> {{$v->empresa}}</p>
         </div>
         <ul class="list-group list-group-flush ">
-        <li class="list-group-item "><b>Local:</b> {{$v->local}}</li>
+        <li class="list-group-item "><b>Local:</b> <a class="text-dark">{{$v->local}}</a></li>
           <li class="list-group-item "><b>Área:</b>
          @if($v->area == 'EC')
          Engenharia da Computação
@@ -136,11 +156,11 @@
         </li>
           <li class="list-group-item "><b>Tipo:</b> 
             @if($v->tipo == 'T')
-            Trainee
+            <a class="text-dark">Trainee</a>
             @elseif($v->tipo == 'E')
-            Estágio
+            <a class="text-dark">Estágio</a>
             @elseif($v->tipo == 'E/T')
-            Estágio e Trainee
+            <a class="text-dark">Estágio e Trainee</a>
             
             @endif
         
