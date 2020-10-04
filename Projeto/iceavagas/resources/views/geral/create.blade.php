@@ -13,7 +13,7 @@
            
         </div>
         <div class="col">
-           <p> <h1><i class="fas fa-toolbox"></i> Enviar uma Vaga</h1></p>
+           <p> <h1 class="text-white"><i class="fas fa-user-tie"></i> Enviar uma Vaga</h1></p>
         </div>
         <div class="col">
             

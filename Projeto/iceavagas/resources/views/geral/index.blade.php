@@ -45,7 +45,7 @@
           <p>
           
           <select name="tipo" id="tipo" class="form-control" onchange="myFunction2()">
-              <option value="" disabled selected>Escolha um Tipo</option>
+              <option value="" disabled selected>Filtre pelo tipo da vaga</option>
              
               <option value="Trainee">Trainee</option>
               <option value="Estágio">Estágio</option>
@@ -82,7 +82,13 @@
     @if($v->status == 2)
     <div class="col-3">
     <div class="card" id="cards" style="width: 18rem;">
-        <img class="card-img-top" src="{{asset('/img/img01.png')}}" alt="Card image">
+        @if($v->tipo == 'E')
+        <img width="15%" class="card-img-top" src="{{asset('/img/estagio.jpg')}}" alt="Card image">
+        <!--Fonte: http://pioneiro.clicrbs.com.br/rs/politica/noticia/2019/10/divulgado-resultado-do-processo-seletivo-para-estagiarios-da-prefeitura-de-caxias-11881955.html-->
+        @else
+        <img class="card-img-top" src="{{asset('/img/novo-profissional-do-futuro-1.png')}}" alt="Card image">
+        <!--Fonte: https://www1.bytebio.com/mercado-de-trabalho-do-futuro/-->
+        @endif
         <div class="card-body bg-info">
           <h5 class="card-title text-white"><b>{{$v->titulo}}</b></h5>
           <p class="card-text text-white"><b>Empresa:</b> {{$v->empresa}}</p>
@@ -120,7 +126,10 @@
         </div>
       </div>
     </div>
+    <br>
     @endif
+ 
+
 @endforeach
 
 </div>

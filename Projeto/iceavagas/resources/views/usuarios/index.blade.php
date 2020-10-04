@@ -59,7 +59,7 @@
                 <th>Nome</th>
                 <th>Curso</th>
                 <th>Matrícula</th>
-                <th>Área</th>
+                <th>Área de Interesse</th>
                 <th>Email</th>
                 <th>Permissão</th>
                 
@@ -84,7 +84,7 @@
                     Trainee
                     @elseif($u->area == 'E')
                     Estágio
-                    @elseif($u->area == 'T/E')
+                    @elseif($u->area == 'E/T')
                     Trainee e Estágio
                     @endif
                 
