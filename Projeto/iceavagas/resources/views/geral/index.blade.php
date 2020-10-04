@@ -34,12 +34,27 @@
       <div class="col">
         <br>
         <p>
-        <input type="text" id="myFilter" class="form-control" onkeyup="myFunction()" placeholder="Pesquise uma vaga, local ou Trainee/Estágio..">
+        <input type="text" id="myFilter" class="form-control" onkeyup="myFunction()" placeholder="Pesquise uma vaga, local ..">
         </p>
       
       </div>
       <div class="col">
 
+        <div class="form-group">
+          <br>
+          <p>
+          
+          <select name="tipo" id="tipo" class="form-control" onchange="myFunction2()">
+              <option value="" disabled selected>Escolha um Tipo</option>
+             
+              <option value="Trainee">Trainee</option>
+              <option value="Estágio">Estágio</option>
+              <option value="Estágio e Trainee">Estágio e Trainee</option>
+              
+             
+              </select>
+            </p>
+      </div>
       </div>
   </div>
 
