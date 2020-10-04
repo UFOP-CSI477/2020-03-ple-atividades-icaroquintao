@@ -79,7 +79,7 @@
                 <!--<td> {{$v->email}}</td> -->
                 <td> {{$v->descricao}}</td> 
                 <td> {{$v->local}}</td> 
-                <td> {{$v->data}}</td> 
+                <td> <input class="" type="date" value="{{$v->data}}" disabled></td> 
                 <td> {{$v->area}}</td> 
                 <td> {{$v->tipo}}</td>
                 

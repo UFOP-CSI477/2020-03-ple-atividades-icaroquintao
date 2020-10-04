@@ -78,7 +78,7 @@
                 <td> {{$r->equipamento->nome}}</td>
                 <td> {{$r->user->name}} - ({{$r->user->email}})</td> 
                 <td> {{$r->descricao}}</td> 
-                <td> {{$r->datalimite}}</td> 
+                <td>  <input class="" type="date" value="{{$r->datalimite}}" disabled></td> 
                 <td>  @if( $r->tipo == 1)
                     Preventiva
                 
@@ -91,7 +91,7 @@
                         Urgente
                     @endif</td> 
                  
-                <td><a href="{{route('registros.show', $r->id)}}">Editar/Excluir</a></td>
+                <td><a class="btn btn-primary" href="{{route('registros.show', $r->id)}}">Editar/Excluir</a></td>
                 </tr>
             @endforeach
 

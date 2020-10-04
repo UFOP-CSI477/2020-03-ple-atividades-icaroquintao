@@ -72,7 +72,7 @@
           
             @foreach ($registros as $r)
                 <tr>
-                <td> {{$r->datalimite}}</td>
+                <td> <input class="" type="date" value="{{$r->datalimite}}" disabled></td>
                 <td> {{$r->equipamento->nome}}</td>
                 <td> {{$r->user->name}}</td>
                 <td> 

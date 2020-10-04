@@ -102,7 +102,7 @@
                                 <td> {{$vaga->email}}</td> 
                                 <td> {{$vaga->descricao}}</td> 
                                 <td> {{$vaga->local}}</td> 
-                                <td> {{$vaga->data}}</td> 
+                                <td> <input class="" type="date" value="{{$vaga->data}}" disabled></td> 
                                 <td> {{$vaga->area}}</td> 
                                 <td> {{$vaga->tipo}}</td>
                                 

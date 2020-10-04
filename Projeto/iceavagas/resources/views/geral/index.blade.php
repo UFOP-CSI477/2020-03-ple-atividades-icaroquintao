@@ -97,7 +97,7 @@
         
         </li>
           <li class="list-group-item "><b>Descrição:</b> {{$v->descricao}}</li>
-          <li class="list-group-item "><b>Encerramento:</b> {{$v->data}}</li>
+          <li class="list-group-item "><b>Encerramento:</b> <input class="bg-info text-white" type="date" value="{{$v->data}}" disabled></li>
         </ul>
         <div class="card-body">
           

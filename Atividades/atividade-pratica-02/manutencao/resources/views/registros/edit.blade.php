@@ -145,7 +145,7 @@
         <p>
             <div class="form-group">
                 <label for="datalimite">Data Limite: </label>
-                <input type="data" name="datalimite" id="datalimite" class="form-control" value=" {{$registro->datalimite}}">
+                <input type="date" name="datalimite" id="datalimite" class="form-control" value="{{$registro->datalimite}}">
             </div></p>
         </div>
 
