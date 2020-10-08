@@ -27,10 +27,18 @@
         </div>
 
         <div class="col">
-            <div class="alert alert-warning" role="alert" id="mostrar" style="display: none">
-                Os campos não estão preenchidos corretamente!
+            <div class="alert alert-danger" role="alert" id="mostrar" style="display: none">
+                Existem campos em branco! Preencha os dados corretamente.
               </div>
-       
+              <div class="alert alert-danger" role="alert" id="mostrar2" style="display: none">
+                O email da empresa não está preenchido corretamente!
+              </div>
+              <div class="alert alert-danger" role="alert" id="mostrar3" style="display: none">
+                O campo Local está preenchido incorretamente!
+              </div>
+              <div class="alert alert-danger" role="alert" id="mostrar4" style="display: none">
+                O campo Link está preenchido incorretamente!
+              </div>
         </div>
         <div class="col">
              </div>
@@ -115,8 +123,8 @@
 <div class="row">
     <div class="col">
         <div class="form-group">
-            <label for="link">Link para Inscrição (https://SEU_LINK): </label>
-            <input type="text" name="link" id="link" class="form-control">
+            <label for="link">Link para Inscrição (https://SEU_LINK/): </label>
+            <input type="text" name="link" id="link" class="form-control" value="https://">
         </div>
     
 </div>
@@ -143,7 +151,7 @@
 
 
     <div class="text-right">
-        <input type="submit" value="Cadastrar" class="btn btn-info">
+        <input type="submit" value="Cadastrar" class="btn btn-info" onclick="return verifica();">
         <input type="reset" value="Limpar" class="btn btn-danger">
     </div>
 
