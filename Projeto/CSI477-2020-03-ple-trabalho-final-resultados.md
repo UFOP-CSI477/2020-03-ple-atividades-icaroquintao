@@ -7,13 +7,15 @@
 
 ### Resumo
 
-  (Apresentar um breve resumo sobre o seu trabalho, indicando o contexto e as principais funcionalidades.)
+  Este trabalho tem como finalidade desenvolver um sistema para a disciplina de Sistemas Web I (CSI477), durante o período letivo especial de 2020 em função da COVID-19. O projeto consiste no gerenciamento de estágios e processos de trainee para os alunos do ICEA. Unindo empresas e alunos para o desenvolvimento profissional do estudante.
 
 ### 1. Funcionalidades implementadas
 <!-- Descrever as funcionalidades que eram previstas e foram implementas. -->
+As seguintes funcionalidades eram previstas e foram implementadas: o usuário pode entrar em sua conta, ele pode ver vagas de estágio e trainee, filtrar por localidade e modalidade (se é estágio ou trainee), acessar o link da vaga de seu interesse e sugerir adição de novos processos, estes só serão adicionados a página de vagas, caso o administrador aceite. O usuário pode também verificar processos encerrados.
   
 ### 2. Funcionalidades previstas e não implementadas
 <!-- Descrever as funcionalidades que eram previstas e não foram implementas, apresentando uma breve justificativa do porquê elas não foram incluídas -->
+A seguinte funcionalidade era prevista e não foi implementada: favoritar vagas. O problema foi que eu começei a embolar
 
 ### 3. Outras funcionalidades implementadas
 <!-- Descrever as funcionalidades implementas além daquelas que foram previstas, caso se aplique.  -->
